@@ -73,7 +73,7 @@ public class window : MonoBehaviour
             if (id == 1)
             {
                 //#if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
+                //UnityEditor.EditorApplication.isPlaying = false;
                 //#else
                 Application.Quit();
                 Debug.Log("OK!@@");
