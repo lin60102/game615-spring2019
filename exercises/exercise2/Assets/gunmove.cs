@@ -91,7 +91,7 @@ public class gunmove : MonoBehaviour
         if (other.gameObject.name == "Target")
         {
             count++;
-            grade.GetComponent<TextMesh>().text = ((count/2).ToString());
+            grade.GetComponent<TextMesh>().text = (count.ToString());
         }
        // Debug.Log(other.gameObject.name);
     }
