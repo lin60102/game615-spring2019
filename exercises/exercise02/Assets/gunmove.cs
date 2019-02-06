@@ -76,7 +76,8 @@ public class gunmove : MonoBehaviour
 
     void reset() {
         float step = 0.1f * Time.deltaTime;
-        bullet.transform.localPosition = gun.transform.localPosition;
+        float bullet_y = (gun.transform.localPosition.y) + 2.3f;
+        bullet.transform.localPosition = new Vector3((gun.transform.localPosition.x), bullet_y, (gun.transform.localPosition.z));
         
 
     }
