@@ -57,7 +57,7 @@ public class gunmove : MonoBehaviour
         if (gun.transform.localPosition.x > 8)
         {
             gun.transform.localPosition = new Vector3(8, (gun.transform.localPosition.y), (gun.transform.localPosition.z));
-        }
+        }z`
         if (gun.transform.localPosition.y > 4)
         {
             gun.transform.localPosition = new Vector3((gun.transform.localPosition.x), 4, (gun.transform.localPosition.z));
