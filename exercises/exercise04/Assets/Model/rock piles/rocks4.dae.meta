@@ -1,0 +1,1333 @@
+fileFormatVersion: 2
+guid: 539e76bef55fd0a4d8f842340a1e11a7
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: environment
+    100002: Light
+    100004: Light.1
+    100006: Light.2
+    100008: Piece_0
+    100010: Piece_0 1
+    100012: Piece_0 10
+    100014: Piece_0 11
+    100016: Piece_0 12
+    100018: Piece_0 13
+    100020: Piece_0 14
+    100022: Piece_0 15
+    100024: Piece_0 16
+    100026: Piece_0 17
+    100028: Piece_0 18
+    100030: Piece_0 2
+    100032: Piece_0 3
+    100034: Piece_0 4
+    100036: Piece_0 5
+    100038: Piece_0 6
+    100040: Piece_0 7
+    100042: Piece_0 8
+    100044: Piece_0 9
+    100046: Piece_1
+    100048: Piece_1 1
+    100050: Piece_1 10
+    100052: Piece_1 11
+    100054: Piece_1 12
+    100056: Piece_1 13
+    100058: Piece_1 14
+    100060: Piece_1 15
+    100062: Piece_1 16
+    100064: Piece_1 17
+    100066: Piece_1 18
+    100068: Piece_1 19
+    100070: Piece_1 2
+    100072: Piece_1 3
+    100074: Piece_1 4
+    100076: Piece_1 5
+    100078: Piece_1 6
+    100080: Piece_1 7
+    100082: Piece_1 8
+    100084: Piece_1 9
+    100086: Piece_10
+    100088: Piece_11
+    100090: Piece_12
+    100092: Piece_12 1
+    100094: Piece_13
+    100096: Piece_13 1
+    100098: Piece_14
+    100100: Piece_14 1
+    100102: Piece_15
+    100104: Piece_15 1
+    100106: Piece_16
+    100108: Piece_16 1
+    100110: Piece_17
+    100112: Piece_17 1
+    100114: Piece_18
+    100116: Piece_18 1
+    100118: Piece_19
+    100120: Piece_19 1
+    100122: Piece_2
+    100124: Piece_2 1
+    100126: Piece_2 10
+    100128: Piece_2 11
+    100130: Piece_2 12
+    100132: Piece_2 13
+    100134: Piece_2 14
+    100136: Piece_2 15
+    100138: Piece_2 16
+    100140: Piece_2 17
+    100142: Piece_2 18
+    100144: Piece_2 2
+    100146: Piece_2 3
+    100148: Piece_2 4
+    100150: Piece_2 5
+    100152: Piece_2 6
+    100154: Piece_2 7
+    100156: Piece_2 8
+    100158: Piece_2 9
+    100160: Piece_20
+    100162: Piece_20 1
+    100164: Piece_21
+    100166: Piece_21 1
+    100168: Piece_22
+    100170: Piece_22 1
+    100172: Piece_23
+    100174: Piece_23 1
+    100176: Piece_24
+    100178: Piece_25
+    100180: Piece_25 1
+    100182: Piece_26
+    100184: Piece_26 1
+    100186: Piece_27
+    100188: Piece_27 1
+    100190: Piece_28
+    100192: Piece_28 1
+    100194: Piece_29
+    100196: Piece_29 1
+    100198: Piece_3
+    100200: Piece_3 1
+    100202: Piece_3 10
+    100204: Piece_3 11
+    100206: Piece_3 12
+    100208: Piece_3 13
+    100210: Piece_3 14
+    100212: Piece_3 15
+    100214: Piece_3 16
+    100216: Piece_3 17
+    100218: Piece_3 18
+    100220: Piece_3 19
+    100222: Piece_3 2
+    100224: Piece_3 20
+    100226: Piece_3 3
+    100228: Piece_3 4
+    100230: Piece_3 5
+    100232: Piece_3 6
+    100234: Piece_3 7
+    100236: Piece_3 8
+    100238: Piece_3 9
+    100240: Piece_30
+    100242: Piece_30 1
+    100244: Piece_31
+    100246: Piece_31 1
+    100248: Piece_32
+    100250: Piece_33
+    100252: Piece_34
+    100254: Piece_35
+    100256: Piece_35 1
+    100258: Piece_36
+    100260: Piece_36 1
+    100262: Piece_37
+    100264: Piece_37 1
+    100266: Piece_38
+    100268: Piece_38 1
+    100270: Piece_39
+    100272: Piece_4
+    100274: Piece_4 1
+    100276: Piece_4 10
+    100278: Piece_4 11
+    100280: Piece_4 12
+    100282: Piece_4 13
+    100284: Piece_4 14
+    100286: Piece_4 15
+    100288: Piece_4 16
+    100290: Piece_4 17
+    100292: Piece_4 18
+    100294: Piece_4 19
+    100296: Piece_4 2
+    100298: Piece_4 3
+    100300: Piece_4 4
+    100302: Piece_4 5
+    100304: Piece_4 6
+    100306: Piece_4 7
+    100308: Piece_4 8
+    100310: Piece_4 9
+    100312: Piece_40
+    100314: Piece_41
+    100316: Piece_42
+    100318: Piece_43
+    100320: Piece_44
+    100322: Piece_45
+    100324: Piece_46
+    100326: Piece_47
+    100328: Piece_48
+    100330: Piece_5
+    100332: Piece_5 1
+    100334: Piece_5 10
+    100336: Piece_5 11
+    100338: Piece_5 12
+    100340: Piece_5 13
+    100342: Piece_5 14
+    100344: Piece_5 15
+    100346: Piece_5 16
+    100348: Piece_5 17
+    100350: Piece_5 18
+    100352: Piece_5 19
+    100354: Piece_5 2
+    100356: Piece_5 3
+    100358: Piece_5 4
+    100360: Piece_5 5
+    100362: Piece_5 6
+    100364: Piece_5 7
+    100366: Piece_5 8
+    100368: Piece_5 9
+    100370: Piece_6
+    100372: Piece_6 1
+    100374: Piece_6 10
+    100376: Piece_6 11
+    100378: Piece_6 12
+    100380: Piece_6 13
+    100382: Piece_6 14
+    100384: Piece_6 15
+    100386: Piece_6 16
+    100388: Piece_6 17
+    100390: Piece_6 18
+    100392: Piece_6 19
+    100394: Piece_6 2
+    100396: Piece_6 3
+    100398: Piece_6 4
+    100400: Piece_6 5
+    100402: Piece_6 6
+    100404: Piece_6 7
+    100406: Piece_6 8
+    100408: Piece_6 9
+    100410: Piece_7
+    100412: Piece_7 1
+    100414: Piece_7 10
+    100416: Piece_7 11
+    100418: Piece_7 12
+    100420: Piece_7 13
+    100422: Piece_7 14
+    100424: Piece_7 15
+    100426: Piece_7 16
+    100428: Piece_7 17
+    100430: Piece_7 2
+    100432: Piece_7 3
+    100434: Piece_7 4
+    100436: Piece_7 5
+    100438: Piece_7 6
+    100440: Piece_7 7
+    100442: Piece_7 8
+    100444: Piece_7 9
+    100446: Piece_8
+    100448: Piece_8 1
+    100450: Piece_8 10
+    100452: Piece_8 11
+    100454: Piece_8 12
+    100456: Piece_8 13
+    100458: Piece_8 14
+    100460: Piece_8 2
+    100462: Piece_8 3
+    100464: Piece_8 4
+    100466: Piece_8 5
+    100468: Piece_8 6
+    100470: Piece_8 7
+    100472: Piece_8 8
+    100474: Piece_8 9
+    100476: Piece_9
+    100478: Piece_9 1
+    100480: Piece_9 10
+    100482: Piece_9 2
+    100484: Piece_9 3
+    100486: Piece_9 4
+    100488: Piece_9 5
+    100490: Piece_9 6
+    100492: Piece_9 7
+    100494: Piece_9 8
+    100496: Piece_9 9
+    100498: rocks4
+    100500: //RootNode
+    400000: environment
+    400002: Light
+    400004: Light.1
+    400006: Light.2
+    400008: Piece_0
+    400010: Piece_0 1
+    400012: Piece_0 10
+    400014: Piece_0 11
+    400016: Piece_0 12
+    400018: Piece_0 13
+    400020: Piece_0 14
+    400022: Piece_0 15
+    400024: Piece_0 16
+    400026: Piece_0 17
+    400028: Piece_0 18
+    400030: Piece_0 2
+    400032: Piece_0 3
+    400034: Piece_0 4
+    400036: Piece_0 5
+    400038: Piece_0 6
+    400040: Piece_0 7
+    400042: Piece_0 8
+    400044: Piece_0 9
+    400046: Piece_1
+    400048: Piece_1 1
+    400050: Piece_1 10
+    400052: Piece_1 11
+    400054: Piece_1 12
+    400056: Piece_1 13
+    400058: Piece_1 14
+    400060: Piece_1 15
+    400062: Piece_1 16
+    400064: Piece_1 17
+    400066: Piece_1 18
+    400068: Piece_1 19
+    400070: Piece_1 2
+    400072: Piece_1 3
+    400074: Piece_1 4
+    400076: Piece_1 5
+    400078: Piece_1 6
+    400080: Piece_1 7
+    400082: Piece_1 8
+    400084: Piece_1 9
+    400086: Piece_10
+    400088: Piece_11
+    400090: Piece_12
+    400092: Piece_12 1
+    400094: Piece_13
+    400096: Piece_13 1
+    400098: Piece_14
+    400100: Piece_14 1
+    400102: Piece_15
+    400104: Piece_15 1
+    400106: Piece_16
+    400108: Piece_16 1
+    400110: Piece_17
+    400112: Piece_17 1
+    400114: Piece_18
+    400116: Piece_18 1
+    400118: Piece_19
+    400120: Piece_19 1
+    400122: Piece_2
+    400124: Piece_2 1
+    400126: Piece_2 10
+    400128: Piece_2 11
+    400130: Piece_2 12
+    400132: Piece_2 13
+    400134: Piece_2 14
+    400136: Piece_2 15
+    400138: Piece_2 16
+    400140: Piece_2 17
+    400142: Piece_2 18
+    400144: Piece_2 2
+    400146: Piece_2 3
+    400148: Piece_2 4
+    400150: Piece_2 5
+    400152: Piece_2 6
+    400154: Piece_2 7
+    400156: Piece_2 8
+    400158: Piece_2 9
+    400160: Piece_20
+    400162: Piece_20 1
+    400164: Piece_21
+    400166: Piece_21 1
+    400168: Piece_22
+    400170: Piece_22 1
+    400172: Piece_23
+    400174: Piece_23 1
+    400176: Piece_24
+    400178: Piece_25
+    400180: Piece_25 1
+    400182: Piece_26
+    400184: Piece_26 1
+    400186: Piece_27
+    400188: Piece_27 1
+    400190: Piece_28
+    400192: Piece_28 1
+    400194: Piece_29
+    400196: Piece_29 1
+    400198: Piece_3
+    400200: Piece_3 1
+    400202: Piece_3 10
+    400204: Piece_3 11
+    400206: Piece_3 12
+    400208: Piece_3 13
+    400210: Piece_3 14
+    400212: Piece_3 15
+    400214: Piece_3 16
+    400216: Piece_3 17
+    400218: Piece_3 18
+    400220: Piece_3 19
+    400222: Piece_3 2
+    400224: Piece_3 20
+    400226: Piece_3 3
+    400228: Piece_3 4
+    400230: Piece_3 5
+    400232: Piece_3 6
+    400234: Piece_3 7
+    400236: Piece_3 8
+    400238: Piece_3 9
+    400240: Piece_30
+    400242: Piece_30 1
+    400244: Piece_31
+    400246: Piece_31 1
+    400248: Piece_32
+    400250: Piece_33
+    400252: Piece_34
+    400254: Piece_35
+    400256: Piece_35 1
+    400258: Piece_36
+    400260: Piece_36 1
+    400262: Piece_37
+    400264: Piece_37 1
+    400266: Piece_38
+    400268: Piece_38 1
+    400270: Piece_39
+    400272: Piece_4
+    400274: Piece_4 1
+    400276: Piece_4 10
+    400278: Piece_4 11
+    400280: Piece_4 12
+    400282: Piece_4 13
+    400284: Piece_4 14
+    400286: Piece_4 15
+    400288: Piece_4 16
+    400290: Piece_4 17
+    400292: Piece_4 18
+    400294: Piece_4 19
+    400296: Piece_4 2
+    400298: Piece_4 3
+    400300: Piece_4 4
+    400302: Piece_4 5
+    400304: Piece_4 6
+    400306: Piece_4 7
+    400308: Piece_4 8
+    400310: Piece_4 9
+    400312: Piece_40
+    400314: Piece_41
+    400316: Piece_42
+    400318: Piece_43
+    400320: Piece_44
+    400322: Piece_45
+    400324: Piece_46
+    400326: Piece_47
+    400328: Piece_48
+    400330: Piece_5
+    400332: Piece_5 1
+    400334: Piece_5 10
+    400336: Piece_5 11
+    400338: Piece_5 12
+    400340: Piece_5 13
+    400342: Piece_5 14
+    400344: Piece_5 15
+    400346: Piece_5 16
+    400348: Piece_5 17
+    400350: Piece_5 18
+    400352: Piece_5 19
+    400354: Piece_5 2
+    400356: Piece_5 3
+    400358: Piece_5 4
+    400360: Piece_5 5
+    400362: Piece_5 6
+    400364: Piece_5 7
+    400366: Piece_5 8
+    400368: Piece_5 9
+    400370: Piece_6
+    400372: Piece_6 1
+    400374: Piece_6 10
+    400376: Piece_6 11
+    400378: Piece_6 12
+    400380: Piece_6 13
+    400382: Piece_6 14
+    400384: Piece_6 15
+    400386: Piece_6 16
+    400388: Piece_6 17
+    400390: Piece_6 18
+    400392: Piece_6 19
+    400394: Piece_6 2
+    400396: Piece_6 3
+    400398: Piece_6 4
+    400400: Piece_6 5
+    400402: Piece_6 6
+    400404: Piece_6 7
+    400406: Piece_6 8
+    400408: Piece_6 9
+    400410: Piece_7
+    400412: Piece_7 1
+    400414: Piece_7 10
+    400416: Piece_7 11
+    400418: Piece_7 12
+    400420: Piece_7 13
+    400422: Piece_7 14
+    400424: Piece_7 15
+    400426: Piece_7 16
+    400428: Piece_7 17
+    400430: Piece_7 2
+    400432: Piece_7 3
+    400434: Piece_7 4
+    400436: Piece_7 5
+    400438: Piece_7 6
+    400440: Piece_7 7
+    400442: Piece_7 8
+    400444: Piece_7 9
+    400446: Piece_8
+    400448: Piece_8 1
+    400450: Piece_8 10
+    400452: Piece_8 11
+    400454: Piece_8 12
+    400456: Piece_8 13
+    400458: Piece_8 14
+    400460: Piece_8 2
+    400462: Piece_8 3
+    400464: Piece_8 4
+    400466: Piece_8 5
+    400468: Piece_8 6
+    400470: Piece_8 7
+    400472: Piece_8 8
+    400474: Piece_8 9
+    400476: Piece_9
+    400478: Piece_9 1
+    400480: Piece_9 10
+    400482: Piece_9 2
+    400484: Piece_9 3
+    400486: Piece_9 4
+    400488: Piece_9 5
+    400490: Piece_9 6
+    400492: Piece_9 7
+    400494: Piece_9 8
+    400496: Piece_9 9
+    400498: //RootNode
+    400500: rocks4
+    2100000: in
+    2100002: out
+    2300000: Piece_0
+    2300002: Piece_0 1
+    2300004: Piece_0 10
+    2300006: Piece_0 11
+    2300008: Piece_0 12
+    2300010: Piece_0 13
+    2300012: Piece_0 14
+    2300014: Piece_0 15
+    2300016: Piece_0 16
+    2300018: Piece_0 17
+    2300020: Piece_0 18
+    2300022: Piece_0 2
+    2300024: Piece_0 3
+    2300026: Piece_0 4
+    2300028: Piece_0 5
+    2300030: Piece_0 6
+    2300032: Piece_0 7
+    2300034: Piece_0 8
+    2300036: Piece_0 9
+    2300038: Piece_1
+    2300040: Piece_1 1
+    2300042: Piece_1 10
+    2300044: Piece_1 11
+    2300046: Piece_1 12
+    2300048: Piece_1 13
+    2300050: Piece_1 14
+    2300052: Piece_1 15
+    2300054: Piece_1 16
+    2300056: Piece_1 17
+    2300058: Piece_1 18
+    2300060: Piece_1 19
+    2300062: Piece_1 2
+    2300064: Piece_1 3
+    2300066: Piece_1 4
+    2300068: Piece_1 5
+    2300070: Piece_1 6
+    2300072: Piece_1 7
+    2300074: Piece_1 8
+    2300076: Piece_1 9
+    2300078: Piece_10
+    2300080: Piece_11
+    2300082: Piece_12
+    2300084: Piece_12 1
+    2300086: Piece_13
+    2300088: Piece_13 1
+    2300090: Piece_14
+    2300092: Piece_14 1
+    2300094: Piece_15
+    2300096: Piece_15 1
+    2300098: Piece_16
+    2300100: Piece_16 1
+    2300102: Piece_17
+    2300104: Piece_17 1
+    2300106: Piece_18
+    2300108: Piece_18 1
+    2300110: Piece_19
+    2300112: Piece_19 1
+    2300114: Piece_2
+    2300116: Piece_2 1
+    2300118: Piece_2 10
+    2300120: Piece_2 11
+    2300122: Piece_2 12
+    2300124: Piece_2 13
+    2300126: Piece_2 14
+    2300128: Piece_2 15
+    2300130: Piece_2 16
+    2300132: Piece_2 17
+    2300134: Piece_2 18
+    2300136: Piece_2 2
+    2300138: Piece_2 3
+    2300140: Piece_2 4
+    2300142: Piece_2 5
+    2300144: Piece_2 6
+    2300146: Piece_2 7
+    2300148: Piece_2 8
+    2300150: Piece_2 9
+    2300152: Piece_20
+    2300154: Piece_20 1
+    2300156: Piece_21
+    2300158: Piece_21 1
+    2300160: Piece_22
+    2300162: Piece_22 1
+    2300164: Piece_23
+    2300166: Piece_23 1
+    2300168: Piece_24
+    2300170: Piece_25
+    2300172: Piece_25 1
+    2300174: Piece_26
+    2300176: Piece_26 1
+    2300178: Piece_27
+    2300180: Piece_27 1
+    2300182: Piece_28
+    2300184: Piece_28 1
+    2300186: Piece_29
+    2300188: Piece_29 1
+    2300190: Piece_3
+    2300192: Piece_3 1
+    2300194: Piece_3 10
+    2300196: Piece_3 11
+    2300198: Piece_3 12
+    2300200: Piece_3 13
+    2300202: Piece_3 14
+    2300204: Piece_3 15
+    2300206: Piece_3 16
+    2300208: Piece_3 17
+    2300210: Piece_3 18
+    2300212: Piece_3 19
+    2300214: Piece_3 2
+    2300216: Piece_3 20
+    2300218: Piece_3 3
+    2300220: Piece_3 4
+    2300222: Piece_3 5
+    2300224: Piece_3 6
+    2300226: Piece_3 7
+    2300228: Piece_3 8
+    2300230: Piece_3 9
+    2300232: Piece_30
+    2300234: Piece_30 1
+    2300236: Piece_31
+    2300238: Piece_31 1
+    2300240: Piece_32
+    2300242: Piece_33
+    2300244: Piece_34
+    2300246: Piece_35
+    2300248: Piece_35 1
+    2300250: Piece_36
+    2300252: Piece_36 1
+    2300254: Piece_37
+    2300256: Piece_37 1
+    2300258: Piece_38
+    2300260: Piece_38 1
+    2300262: Piece_39
+    2300264: Piece_4
+    2300266: Piece_4 1
+    2300268: Piece_4 10
+    2300270: Piece_4 11
+    2300272: Piece_4 12
+    2300274: Piece_4 13
+    2300276: Piece_4 14
+    2300278: Piece_4 15
+    2300280: Piece_4 16
+    2300282: Piece_4 17
+    2300284: Piece_4 18
+    2300286: Piece_4 19
+    2300288: Piece_4 2
+    2300290: Piece_4 3
+    2300292: Piece_4 4
+    2300294: Piece_4 5
+    2300296: Piece_4 6
+    2300298: Piece_4 7
+    2300300: Piece_4 8
+    2300302: Piece_4 9
+    2300304: Piece_40
+    2300306: Piece_41
+    2300308: Piece_42
+    2300310: Piece_43
+    2300312: Piece_44
+    2300314: Piece_45
+    2300316: Piece_46
+    2300318: Piece_47
+    2300320: Piece_48
+    2300322: Piece_5
+    2300324: Piece_5 1
+    2300326: Piece_5 10
+    2300328: Piece_5 11
+    2300330: Piece_5 12
+    2300332: Piece_5 13
+    2300334: Piece_5 14
+    2300336: Piece_5 15
+    2300338: Piece_5 16
+    2300340: Piece_5 17
+    2300342: Piece_5 18
+    2300344: Piece_5 19
+    2300346: Piece_5 2
+    2300348: Piece_5 3
+    2300350: Piece_5 4
+    2300352: Piece_5 5
+    2300354: Piece_5 6
+    2300356: Piece_5 7
+    2300358: Piece_5 8
+    2300360: Piece_5 9
+    2300362: Piece_6
+    2300364: Piece_6 1
+    2300366: Piece_6 10
+    2300368: Piece_6 11
+    2300370: Piece_6 12
+    2300372: Piece_6 13
+    2300374: Piece_6 14
+    2300376: Piece_6 15
+    2300378: Piece_6 16
+    2300380: Piece_6 17
+    2300382: Piece_6 18
+    2300384: Piece_6 19
+    2300386: Piece_6 2
+    2300388: Piece_6 3
+    2300390: Piece_6 4
+    2300392: Piece_6 5
+    2300394: Piece_6 6
+    2300396: Piece_6 7
+    2300398: Piece_6 8
+    2300400: Piece_6 9
+    2300402: Piece_7
+    2300404: Piece_7 1
+    2300406: Piece_7 10
+    2300408: Piece_7 11
+    2300410: Piece_7 12
+    2300412: Piece_7 13
+    2300414: Piece_7 14
+    2300416: Piece_7 15
+    2300418: Piece_7 16
+    2300420: Piece_7 17
+    2300422: Piece_7 2
+    2300424: Piece_7 3
+    2300426: Piece_7 4
+    2300428: Piece_7 5
+    2300430: Piece_7 6
+    2300432: Piece_7 7
+    2300434: Piece_7 8
+    2300436: Piece_7 9
+    2300438: Piece_8
+    2300440: Piece_8 1
+    2300442: Piece_8 10
+    2300444: Piece_8 11
+    2300446: Piece_8 12
+    2300448: Piece_8 13
+    2300450: Piece_8 14
+    2300452: Piece_8 2
+    2300454: Piece_8 3
+    2300456: Piece_8 4
+    2300458: Piece_8 5
+    2300460: Piece_8 6
+    2300462: Piece_8 7
+    2300464: Piece_8 8
+    2300466: Piece_8 9
+    2300468: Piece_9
+    2300470: Piece_9 1
+    2300472: Piece_9 10
+    2300474: Piece_9 2
+    2300476: Piece_9 3
+    2300478: Piece_9 4
+    2300480: Piece_9 5
+    2300482: Piece_9 6
+    2300484: Piece_9 7
+    2300486: Piece_9 8
+    2300488: Piece_9 9
+    3300000: Piece_0
+    3300002: Piece_0 1
+    3300004: Piece_0 10
+    3300006: Piece_0 11
+    3300008: Piece_0 12
+    3300010: Piece_0 13
+    3300012: Piece_0 14
+    3300014: Piece_0 15
+    3300016: Piece_0 16
+    3300018: Piece_0 17
+    3300020: Piece_0 18
+    3300022: Piece_0 2
+    3300024: Piece_0 3
+    3300026: Piece_0 4
+    3300028: Piece_0 5
+    3300030: Piece_0 6
+    3300032: Piece_0 7
+    3300034: Piece_0 8
+    3300036: Piece_0 9
+    3300038: Piece_1
+    3300040: Piece_1 1
+    3300042: Piece_1 10
+    3300044: Piece_1 11
+    3300046: Piece_1 12
+    3300048: Piece_1 13
+    3300050: Piece_1 14
+    3300052: Piece_1 15
+    3300054: Piece_1 16
+    3300056: Piece_1 17
+    3300058: Piece_1 18
+    3300060: Piece_1 19
+    3300062: Piece_1 2
+    3300064: Piece_1 3
+    3300066: Piece_1 4
+    3300068: Piece_1 5
+    3300070: Piece_1 6
+    3300072: Piece_1 7
+    3300074: Piece_1 8
+    3300076: Piece_1 9
+    3300078: Piece_10
+    3300080: Piece_11
+    3300082: Piece_12
+    3300084: Piece_12 1
+    3300086: Piece_13
+    3300088: Piece_13 1
+    3300090: Piece_14
+    3300092: Piece_14 1
+    3300094: Piece_15
+    3300096: Piece_15 1
+    3300098: Piece_16
+    3300100: Piece_16 1
+    3300102: Piece_17
+    3300104: Piece_17 1
+    3300106: Piece_18
+    3300108: Piece_18 1
+    3300110: Piece_19
+    3300112: Piece_19 1
+    3300114: Piece_2
+    3300116: Piece_2 1
+    3300118: Piece_2 10
+    3300120: Piece_2 11
+    3300122: Piece_2 12
+    3300124: Piece_2 13
+    3300126: Piece_2 14
+    3300128: Piece_2 15
+    3300130: Piece_2 16
+    3300132: Piece_2 17
+    3300134: Piece_2 18
+    3300136: Piece_2 2
+    3300138: Piece_2 3
+    3300140: Piece_2 4
+    3300142: Piece_2 5
+    3300144: Piece_2 6
+    3300146: Piece_2 7
+    3300148: Piece_2 8
+    3300150: Piece_2 9
+    3300152: Piece_20
+    3300154: Piece_20 1
+    3300156: Piece_21
+    3300158: Piece_21 1
+    3300160: Piece_22
+    3300162: Piece_22 1
+    3300164: Piece_23
+    3300166: Piece_23 1
+    3300168: Piece_24
+    3300170: Piece_25
+    3300172: Piece_25 1
+    3300174: Piece_26
+    3300176: Piece_26 1
+    3300178: Piece_27
+    3300180: Piece_27 1
+    3300182: Piece_28
+    3300184: Piece_28 1
+    3300186: Piece_29
+    3300188: Piece_29 1
+    3300190: Piece_3
+    3300192: Piece_3 1
+    3300194: Piece_3 10
+    3300196: Piece_3 11
+    3300198: Piece_3 12
+    3300200: Piece_3 13
+    3300202: Piece_3 14
+    3300204: Piece_3 15
+    3300206: Piece_3 16
+    3300208: Piece_3 17
+    3300210: Piece_3 18
+    3300212: Piece_3 19
+    3300214: Piece_3 2
+    3300216: Piece_3 20
+    3300218: Piece_3 3
+    3300220: Piece_3 4
+    3300222: Piece_3 5
+    3300224: Piece_3 6
+    3300226: Piece_3 7
+    3300228: Piece_3 8
+    3300230: Piece_3 9
+    3300232: Piece_30
+    3300234: Piece_30 1
+    3300236: Piece_31
+    3300238: Piece_31 1
+    3300240: Piece_32
+    3300242: Piece_33
+    3300244: Piece_34
+    3300246: Piece_35
+    3300248: Piece_35 1
+    3300250: Piece_36
+    3300252: Piece_36 1
+    3300254: Piece_37
+    3300256: Piece_37 1
+    3300258: Piece_38
+    3300260: Piece_38 1
+    3300262: Piece_39
+    3300264: Piece_4
+    3300266: Piece_4 1
+    3300268: Piece_4 10
+    3300270: Piece_4 11
+    3300272: Piece_4 12
+    3300274: Piece_4 13
+    3300276: Piece_4 14
+    3300278: Piece_4 15
+    3300280: Piece_4 16
+    3300282: Piece_4 17
+    3300284: Piece_4 18
+    3300286: Piece_4 19
+    3300288: Piece_4 2
+    3300290: Piece_4 3
+    3300292: Piece_4 4
+    3300294: Piece_4 5
+    3300296: Piece_4 6
+    3300298: Piece_4 7
+    3300300: Piece_4 8
+    3300302: Piece_4 9
+    3300304: Piece_40
+    3300306: Piece_41
+    3300308: Piece_42
+    3300310: Piece_43
+    3300312: Piece_44
+    3300314: Piece_45
+    3300316: Piece_46
+    3300318: Piece_47
+    3300320: Piece_48
+    3300322: Piece_5
+    3300324: Piece_5 1
+    3300326: Piece_5 10
+    3300328: Piece_5 11
+    3300330: Piece_5 12
+    3300332: Piece_5 13
+    3300334: Piece_5 14
+    3300336: Piece_5 15
+    3300338: Piece_5 16
+    3300340: Piece_5 17
+    3300342: Piece_5 18
+    3300344: Piece_5 19
+    3300346: Piece_5 2
+    3300348: Piece_5 3
+    3300350: Piece_5 4
+    3300352: Piece_5 5
+    3300354: Piece_5 6
+    3300356: Piece_5 7
+    3300358: Piece_5 8
+    3300360: Piece_5 9
+    3300362: Piece_6
+    3300364: Piece_6 1
+    3300366: Piece_6 10
+    3300368: Piece_6 11
+    3300370: Piece_6 12
+    3300372: Piece_6 13
+    3300374: Piece_6 14
+    3300376: Piece_6 15
+    3300378: Piece_6 16
+    3300380: Piece_6 17
+    3300382: Piece_6 18
+    3300384: Piece_6 19
+    3300386: Piece_6 2
+    3300388: Piece_6 3
+    3300390: Piece_6 4
+    3300392: Piece_6 5
+    3300394: Piece_6 6
+    3300396: Piece_6 7
+    3300398: Piece_6 8
+    3300400: Piece_6 9
+    3300402: Piece_7
+    3300404: Piece_7 1
+    3300406: Piece_7 10
+    3300408: Piece_7 11
+    3300410: Piece_7 12
+    3300412: Piece_7 13
+    3300414: Piece_7 14
+    3300416: Piece_7 15
+    3300418: Piece_7 16
+    3300420: Piece_7 17
+    3300422: Piece_7 2
+    3300424: Piece_7 3
+    3300426: Piece_7 4
+    3300428: Piece_7 5
+    3300430: Piece_7 6
+    3300432: Piece_7 7
+    3300434: Piece_7 8
+    3300436: Piece_7 9
+    3300438: Piece_8
+    3300440: Piece_8 1
+    3300442: Piece_8 10
+    3300444: Piece_8 11
+    3300446: Piece_8 12
+    3300448: Piece_8 13
+    3300450: Piece_8 14
+    3300452: Piece_8 2
+    3300454: Piece_8 3
+    3300456: Piece_8 4
+    3300458: Piece_8 5
+    3300460: Piece_8 6
+    3300462: Piece_8 7
+    3300464: Piece_8 8
+    3300466: Piece_8 9
+    3300468: Piece_9
+    3300470: Piece_9 1
+    3300472: Piece_9 10
+    3300474: Piece_9 2
+    3300476: Piece_9 3
+    3300478: Piece_9 4
+    3300480: Piece_9 5
+    3300482: Piece_9 6
+    3300484: Piece_9 7
+    3300486: Piece_9 8
+    3300488: Piece_9 9
+    4300000: Piece_0
+    4300002: Piece_1
+    4300004: Piece_2
+    4300006: Piece_3
+    4300008: Piece_4
+    4300010: Piece_5
+    4300012: Piece_6
+    4300014: Piece_7
+    4300016: Piece_8
+    4300018: Piece_9
+    4300020: Piece_10
+    4300022: Piece_11
+    4300024: Piece_12
+    4300026: Piece_13
+    4300028: Piece_14
+    4300030: Piece_15
+    4300032: Piece_16
+    4300034: Piece_17
+    4300036: Piece_18
+    4300038: Piece_19
+    4300040: Piece_20
+    4300042: Piece_21
+    4300044: Piece_22
+    4300046: Piece_23
+    4300048: Piece_24
+    4300050: Piece_25
+    4300052: Piece_26
+    4300054: Piece_27
+    4300056: Piece_28
+    4300058: Piece_29
+    4300060: Piece_30
+    4300062: Piece_31
+    4300064: Piece_32
+    4300066: Piece_33
+    4300068: Piece_34
+    4300070: Piece_35
+    4300072: Piece_36
+    4300074: Piece_37
+    4300076: Piece_38
+    4300078: Piece_39
+    4300080: Piece_40
+    4300082: Piece_41
+    4300084: Piece_42
+    4300086: Piece_43
+    4300088: Piece_44
+    4300090: Piece_45
+    4300092: Piece_46
+    4300094: Piece_47
+    4300096: Piece_48
+    4300098: Piece_0
+    4300100: Piece_1
+    4300102: Piece_2
+    4300104: Piece_3
+    4300106: Piece_4
+    4300108: Piece_5
+    4300110: Piece_6
+    4300112: Piece_7
+    4300114: Piece_8
+    4300116: Piece_9
+    4300118: Piece_0
+    4300120: Piece_1
+    4300122: Piece_2
+    4300124: Piece_3
+    4300126: Piece_4
+    4300128: Piece_5
+    4300130: Piece_6
+    4300132: Piece_7
+    4300134: Piece_8
+    4300136: Piece_9
+    4300138: Piece_0
+    4300140: Piece_1
+    4300142: Piece_2
+    4300144: Piece_3
+    4300146: Piece_4
+    4300148: Piece_5
+    4300150: Piece_6
+    4300152: Piece_7
+    4300154: Piece_8
+    4300156: Piece_9
+    4300158: Piece_0
+    4300160: Piece_1
+    4300162: Piece_2
+    4300164: Piece_3
+    4300166: Piece_4
+    4300168: Piece_5
+    4300170: Piece_6
+    4300172: Piece_7
+    4300174: Piece_8
+    4300176: Piece_0
+    4300178: Piece_1
+    4300180: Piece_2
+    4300182: Piece_3
+    4300184: Piece_4
+    4300186: Piece_5
+    4300188: Piece_6
+    4300190: Piece_7
+    4300192: Piece_8
+    4300194: Piece_9
+    4300196: Piece_0
+    4300198: Piece_1
+    4300200: Piece_2
+    4300202: Piece_3
+    4300204: Piece_4
+    4300206: Piece_5
+    4300208: Piece_6
+    4300210: Piece_7
+    4300212: Piece_8
+    4300214: Piece_9
+    4300216: Piece_0
+    4300218: Piece_1
+    4300220: Piece_2
+    4300222: Piece_3
+    4300224: Piece_4
+    4300226: Piece_5
+    4300228: Piece_6
+    4300230: Piece_7
+    4300232: Piece_8
+    4300234: Piece_0
+    4300236: Piece_1
+    4300238: Piece_2
+    4300240: Piece_3
+    4300242: Piece_4
+    4300244: Piece_5
+    4300246: Piece_6
+    4300248: Piece_7
+    4300250: Piece_8
+    4300252: Piece_9
+    4300254: Piece_0
+    4300256: Piece_1
+    4300258: Piece_2
+    4300260: Piece_3
+    4300262: Piece_4
+    4300264: Piece_5
+    4300266: Piece_6
+    4300268: Piece_7
+    4300270: Piece_8
+    4300272: Piece_9
+    4300274: Piece_0
+    4300276: Piece_1
+    4300278: Piece_2
+    4300280: Piece_3
+    4300282: Piece_4
+    4300284: Piece_5
+    4300286: Piece_6
+    4300288: Piece_7
+    4300290: Piece_8
+    4300292: Piece_9
+    4300294: Piece_0
+    4300296: Piece_1
+    4300298: Piece_2
+    4300300: Piece_3
+    4300302: Piece_4
+    4300304: Piece_5
+    4300306: Piece_6
+    4300308: Piece_7
+    4300310: Piece_0
+    4300312: Piece_1
+    4300314: Piece_2
+    4300316: Piece_3
+    4300318: Piece_4
+    4300320: Piece_5
+    4300322: Piece_6
+    4300324: Piece_7
+    4300326: Piece_8
+    4300328: Piece_0
+    4300330: Piece_1
+    4300332: Piece_2
+    4300334: Piece_3
+    4300336: Piece_4
+    4300338: Piece_5
+    4300340: Piece_6
+    4300342: Piece_7
+    4300344: Piece_0
+    4300346: Piece_1
+    4300348: Piece_2
+    4300350: Piece_3
+    4300352: Piece_4
+    4300354: Piece_5
+    4300356: Piece_6
+    4300358: Piece_7
+    4300360: Piece_0
+    4300362: Piece_2
+    4300364: Piece_3
+    4300366: Piece_4
+    4300368: Piece_5
+    4300370: Piece_6
+    4300372: Piece_1
+    4300374: Piece_2
+    4300376: Piece_3
+    4300378: Piece_4
+    4300380: Piece_6
+    4300382: Piece_7
+    4300384: Piece_8
+    4300386: Piece_9
+    4300388: Piece_0
+    4300390: Piece_1
+    4300392: Piece_3
+    4300394: Piece_5
+    4300396: Piece_6
+    4300398: Piece_7
+    4300400: Piece_1
+    4300402: Piece_2
+    4300404: Piece_3
+    4300406: Piece_4
+    4300408: Piece_5
+    4300410: Piece_6
+    4300412: Piece_7
+    4300414: Piece_0
+    4300416: Piece_1
+    4300418: Piece_3
+    4300420: Piece_4
+    4300422: Piece_5
+    4300424: Piece_8
+    4300426: Piece_9
+    4300428: Piece_0
+    4300430: Piece_1
+    4300432: Piece_2
+    4300434: Piece_3
+    4300436: Piece_4
+    4300438: Piece_5
+    4300440: Piece_6
+    4300442: Piece_8
+    4300444: Piece_12
+    4300446: Piece_13
+    4300448: Piece_14
+    4300450: Piece_15
+    4300452: Piece_16
+    4300454: Piece_17
+    4300456: Piece_18
+    4300458: Piece_19
+    4300460: Piece_20
+    4300462: Piece_21
+    4300464: Piece_22
+    4300466: Piece_23
+    4300468: Piece_25
+    4300470: Piece_26
+    4300472: Piece_27
+    4300474: Piece_28
+    4300476: Piece_29
+    4300478: Piece_30
+    4300480: Piece_31
+    4300482: Piece_35
+    4300484: Piece_36
+    4300486: Piece_37
+    4300488: Piece_38
+    10800000: Light
+    10800002: Light.1
+    10800004: Light.2
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
