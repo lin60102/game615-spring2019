@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Menucontrol : MonoBehaviour
 {
-    public int diff = 1;
+    public string diff;
     public GameObject mainmenu;
     public GameObject optionmenu;
     public GameObject btneasy;
@@ -15,6 +15,7 @@ public class Menucontrol : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        diff = "Easy";
         mainmenu = GameObject.Find("main");
         optionmenu = GameObject.Find("optionmenu");
         btneasy= GameObject.Find("easyText");
@@ -25,19 +26,19 @@ public class Menucontrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (diff == 1)
+        if (diff == "Easy")
         {
             btneasy.GetComponent<Text>().color = Color.yellow;
             btnnormal.GetComponent<Text>().color = Color.black;
             btndiff.GetComponent<Text>().color = Color.black;
         }
-        else if (diff == 2)
+        else if (diff == "Normal")
         {
             btneasy.GetComponent<Text>().color = Color.black;
             btnnormal.GetComponent<Text>().color = Color.yellow;
             btndiff.GetComponent<Text>().color = Color.black;
         }
-        else if (diff == 3)
+        else if (diff == "Hard")
         {
             btneasy.GetComponent<Text>().color = Color.black;
             btnnormal.GetComponent<Text>().color = Color.black;
@@ -47,7 +48,7 @@ public class Menucontrol : MonoBehaviour
     }
     public void onbtnstart()
     {
-        PlayerPrefs.SetInt("diff", diff);
+        PlayerPrefs.SetString("diff", diff);
         SceneManager.LoadScene("game");
     }
     public void onbtnopt()
@@ -61,15 +62,15 @@ public class Menucontrol : MonoBehaviour
     }
     public void onbtneasy()
     {
-        diff = 1;
+        diff = "Easy";
     }
     public void onbtnnor()
     {
-        diff = 2;
+        diff = "Normal";
     }
     public void onbtndiff()
     {
-        diff = 3;
+        diff = "Hard";
     }
     public void onbtnback()
     {

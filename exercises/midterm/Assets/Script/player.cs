@@ -11,6 +11,7 @@ public class player : MonoBehaviour
     private GameObject textwindow;
     private GameObject question1;
     private GameObject textshow;
+    private GameObject end;
     private GameObject item;
     private GameObject chest1;
     private GameObject chest2;
@@ -30,6 +31,7 @@ public class player : MonoBehaviour
     public GameObject image2;
     public GameObject image3;
     public GameObject image4;
+    public GameObject difficultytext;
     public string choose;
     public string source;
     public Sprite lamp;
@@ -40,16 +42,20 @@ public class player : MonoBehaviour
     public Sprite q3img;
     public Sprite q4img;
     int key = 0;
-    int diff;
+    string diff;
     private AudioSource opendoorMusicAudioSource;
     private AudioSource unboxMusicAudioSource;
+    //time
+    public GameObject timec;
+    public float maxTime;//min
+    public int maxTime_S;//sec
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        diff = PlayerPrefs.GetInt("diff");
+        diff = PlayerPrefs.GetString("diff");
         lantern = GameObject.Find("lantern");
         chest1 = GameObject.Find("chest1b");
         chest2 = GameObject.Find("chest2b");
@@ -65,6 +71,7 @@ public class player : MonoBehaviour
         textwindow= GameObject.Find("textwindow");
         textshow= GameObject.Find("Textshow");
         question1= GameObject.Find("Question1");
+        end = GameObject.Find("End");
         item = GameObject.Find("items");
         image1 = GameObject.Find("light");
         image2 = GameObject.Find("key1");
@@ -72,10 +79,28 @@ public class player : MonoBehaviour
         image4 = GameObject.Find("key3");
         inputQ1= GameObject.Find("Input1");
         questionimage= GameObject.Find("questionimage");
+        difficultytext = GameObject.Find("difficulty");
         questionexplain = GameObject.Find("questionexplain");
         lantern.SetActive(false);
         opendoorMusicAudioSource = textwindow.GetComponent<AudioSource>();
         unboxMusicAudioSource = textshow.GetComponent<AudioSource>();
+        difficultytext.GetComponent<Text>().text ="Difficulty: "+diff.ToString();
+        //time
+        timec= GameObject.Find("time");
+        if (diff == "Easy")
+        {
+            maxTime = 5;
+        }
+        else if (diff == "Normal")
+        {
+            maxTime = 3;
+        }
+        else if (diff == "Hard")
+        {
+            maxTime = 1;
+        }
+        maxTime_S = (int)maxTime * 60;
+        InvokeRepeating("Time_J", 0.01f, 1.0f);
     }
 
     // Update is called once per frame
@@ -289,9 +314,27 @@ public class player : MonoBehaviour
         question1.GetComponent<CanvasGroup>().blocksRaycasts = false;
 
     }
+    void endon()
+    {
+        end.GetComponent<CanvasGroup>().alpha = 1;
+        end.GetComponent<CanvasGroup>().interactable = true;
+        end.GetComponent<CanvasGroup>().blocksRaycasts = true;
+    }
+    void Time_J()
+    {
+        maxTime_S--;
+        timec.GetComponent<Text>().text = "Time: " + maxTime_S / 60 + "min " + maxTime_S % 60 + "sec";
+        //print("Time：" + maxTime_S + "\t" + maxTime_S / 60 + "min" + maxTime_S % 60 + "sec");
+        if (maxTime_S == 0)
+        {
+            endon();
+            itemoff();
+            CancelInvoke("Time_J");
 
+        }
+    }
 
-    public void onbtnchkQ1()
+        public void onbtnchkQ1()
     {
         switch (source)
         {
