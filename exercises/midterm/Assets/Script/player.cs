@@ -145,32 +145,32 @@ public class player : MonoBehaviour
         switch (choose)
         {
             case "chest1":
-                txton("You find a lantern",72);
+                txton("You find a lantern",100);
                 image1.GetComponent<Image>().sprite = lamp;
                 lantern.SetActive(true);
                 choose = "";
                 chest1.SetActive(false);
                 break;
             case "chest2":
-                txton("You find 1st Key",72);
+                txton("You find 1st Key",100);
                 image2.GetComponent<Image>().sprite = key1;
                 choose = "";
                 key++;
                 chest2.SetActive(false);
                 break;
             case "chest3":
-                txton("You find 2nd Key",72);
+                txton("You find 2nd Key",100);
                 image3.GetComponent<Image>().sprite = key2;
                 choose = "";
                 key++;
                 chest3.SetActive(false);
                 break;
             case "chest4":
-                txton("You find a Trump underwear :)",72);
+                txton("You find a Trump underwear :)",100);
                 chest4.SetActive(false);
                 break;
             case "chest5":
-                txton("You find 3rd Key",72);
+                txton("You find 3rd Key",100);
                 image4.GetComponent<Image>().sprite = key3;
                 choose = "";
                 key++;
@@ -286,7 +286,7 @@ public class player : MonoBehaviour
             case "question1":
                 if (inputQ1.GetComponent<InputField>().text == "3081")
                 {
-                    txton("'Krr... creaaaaak....'The door is open", 50);
+                    txton("'Krr... creaaaaak....'The door is open", 90);
                     door1.SetActive(false); //test
                     inputQ1.GetComponent<InputField>().text = "";
                     questionoff();
@@ -295,13 +295,13 @@ public class player : MonoBehaviour
                 else
                 {
                     inputQ1.GetComponent<InputField>().text = "";
-                    txton("No repsonse... might be another password?", 50);
+                    txton("No repsonse... might be another password?", 90);
                 }
                 break;
             case "question2":
                 if (inputQ1.GetComponent<InputField>().text == "7142")
                 {
-                    txton("'Krr... creaaaaak....'The door is open", 50);
+                    txton("'Krr... creaaaaak....'The door is open", 90);
                     door2.SetActive(false); //test
                     inputQ1.GetComponent<InputField>().text = "";
                     questionoff();
@@ -310,13 +310,13 @@ public class player : MonoBehaviour
                 else
                 {
                     inputQ1.GetComponent<InputField>().text = "";
-                    txton("No repsonse... might be another password?", 50);
+                    txton("No repsonse... might be another password?", 90);
                 }
                 break;
             case "question3":
                 if (inputQ1.GetComponent<InputField>().text == "3698")
                 {
-                    txton("'Krr... creaaaaak....'The door is open", 50);
+                    txton("'Krr... creaaaaak....'The door is open", 90);
                     door3.SetActive(false); //test
                     inputQ1.GetComponent<InputField>().text = "";
                     questionoff();
@@ -325,13 +325,13 @@ public class player : MonoBehaviour
                 else
                 {
                     inputQ1.GetComponent<InputField>().text = "";
-                    txton("No repsonse... might be another password?", 50);
+                    txton("No repsonse... might be another password?", 90);
                 }
                 break;
             case "question4":
                 if (inputQ1.GetComponent<InputField>().text == "3152")
                 {
-                    txton("'Krr... creaaaaak....'The door is open", 50);
+                    txton("'Krr... creaaaaak....'The door is open", 90);
                     door4.SetActive(false); //test
                     inputQ1.GetComponent<InputField>().text = "";
                     questionoff();
@@ -340,7 +340,7 @@ public class player : MonoBehaviour
                 else
                 {
                     inputQ1.GetComponent<InputField>().text = "";
-                    txton("No repsonse... might be another password?", 50);
+                    txton("No repsonse... might be another password?", 90);
                 }
                 break;
 
