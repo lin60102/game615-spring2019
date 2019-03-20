@@ -47,19 +47,17 @@ public class Menucontrol : MonoBehaviour
     }
     public void onbtnstart()
     {
+        PlayerPrefs.SetInt("diff", diff);
         SceneManager.LoadScene("game");
     }
     public void onbtnopt()
     {
-        
-       
-        
         mainmuoff();
         optmuon();
     }
     public void onbtnquit()
     {
-        
+        Application.OpenURL("about:blank");
     }
     public void onbtneasy()
     {

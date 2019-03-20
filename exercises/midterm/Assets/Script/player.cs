@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
@@ -39,11 +40,14 @@ public class player : MonoBehaviour
     public Sprite q3img;
     public Sprite q4img;
     int key = 0;
+    int diff;
+    
     
 
     // Start is called before the first frame update
     void Start()
     {
+        diff = PlayerPrefs.GetInt("diff");
         lantern = GameObject.Find("lantern");
         chest1 = GameObject.Find("chest1b");
         chest2 = GameObject.Find("chest2b");
@@ -74,7 +78,7 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
     void OnTriggerEnter(Collider other)
     {
