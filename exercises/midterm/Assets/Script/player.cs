@@ -41,8 +41,10 @@ public class player : MonoBehaviour
     public Sprite q4img;
     int key = 0;
     int diff;
-    
-    
+    private AudioSource opendoorMusicAudioSource;
+    private AudioSource unboxMusicAudioSource;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -72,8 +74,9 @@ public class player : MonoBehaviour
         questionimage= GameObject.Find("questionimage");
         questionexplain = GameObject.Find("questionexplain");
         lantern.SetActive(false);
-
-     }
+        opendoorMusicAudioSource = textwindow.GetComponent<AudioSource>();
+        unboxMusicAudioSource = textshow.GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -150,6 +153,7 @@ public class player : MonoBehaviour
         {
             case "chest1":
                 txton("You find a lantern",100);
+                unboxMusicAudioSource.Play();
                 image1.GetComponent<Image>().sprite = lamp;
                 lantern.SetActive(true);
                 choose = "";
@@ -157,6 +161,7 @@ public class player : MonoBehaviour
                 break;
             case "chest2":
                 txton("You find 1st Key",100);
+                unboxMusicAudioSource.Play();
                 image2.GetComponent<Image>().sprite = key1;
                 choose = "";
                 key++;
@@ -164,6 +169,7 @@ public class player : MonoBehaviour
                 break;
             case "chest3":
                 txton("You find 2nd Key",100);
+                unboxMusicAudioSource.Play();
                 image3.GetComponent<Image>().sprite = key2;
                 choose = "";
                 key++;
@@ -171,10 +177,12 @@ public class player : MonoBehaviour
                 break;
             case "chest4":
                 txton("You find a Trump underwear :)",100);
+                unboxMusicAudioSource.Play();
                 chest4.SetActive(false);
                 break;
             case "chest5":
                 txton("You find 3rd Key",100);
+                unboxMusicAudioSource.Play();
                 image4.GetComponent<Image>().sprite = key3;
                 choose = "";
                 key++;
@@ -291,6 +299,7 @@ public class player : MonoBehaviour
                 if (inputQ1.GetComponent<InputField>().text == "3081")
                 {
                     txton("'Krr... creaaaaak....'The door is open", 90);
+                    opendoorMusicAudioSource.Play();
                     door1.SetActive(false); //test
                     inputQ1.GetComponent<InputField>().text = "";
                     questionoff();
@@ -306,6 +315,7 @@ public class player : MonoBehaviour
                 if (inputQ1.GetComponent<InputField>().text == "7142")
                 {
                     txton("'Krr... creaaaaak....'The door is open", 90);
+                    opendoorMusicAudioSource.Play();
                     door2.SetActive(false); //test
                     inputQ1.GetComponent<InputField>().text = "";
                     questionoff();
@@ -321,6 +331,7 @@ public class player : MonoBehaviour
                 if (inputQ1.GetComponent<InputField>().text == "3698")
                 {
                     txton("'Krr... creaaaaak....'The door is open", 90);
+                    opendoorMusicAudioSource.Play();
                     door3.SetActive(false); //test
                     inputQ1.GetComponent<InputField>().text = "";
                     questionoff();
@@ -336,6 +347,7 @@ public class player : MonoBehaviour
                 if (inputQ1.GetComponent<InputField>().text == "3152")
                 {
                     txton("'Krr... creaaaaak....'The door is open", 90);
+                    opendoorMusicAudioSource.Play();
                     door4.SetActive(false); //test
                     inputQ1.GetComponent<InputField>().text = "";
                     questionoff();
