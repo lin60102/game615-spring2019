@@ -55,6 +55,7 @@ public class player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Screen.SetResolution(1024, 768, false);
         diff = PlayerPrefs.GetString("diff");
         lantern = GameObject.Find("lantern");
         chest1 = GameObject.Find("chest1b");
@@ -139,9 +140,9 @@ public class player : MonoBehaviour
                 Debug.Log("chest5b");
                 break;
             case "door1":
-                itemoff();
-                source = "question1";
-                questionon();
+                txton("'Krr... creaaaaak....'The door is open", 90);
+                opendoorMusicAudioSource.Play();
+                door1.SetActive(false);
                 Debug.Log("door1");
                 break;
             case "door2":
@@ -338,22 +339,6 @@ public class player : MonoBehaviour
     {
         switch (source)
         {
-            case "question1":
-                if (inputQ1.GetComponent<InputField>().text == "3081")
-                {
-                    txton("'Krr... creaaaaak....'The door is open", 90);
-                    opendoorMusicAudioSource.Play();
-                    door1.SetActive(false); //test
-                    inputQ1.GetComponent<InputField>().text = "";
-                    questionoff();
-                    itemon();
-                }
-                else
-                {
-                    inputQ1.GetComponent<InputField>().text = "";
-                    txton("No repsonse... might be another password?", 90);
-                }
-                break;
             case "question2":
                 if (inputQ1.GetComponent<InputField>().text == "7142")
                 {

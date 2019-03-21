@@ -15,6 +15,7 @@ public class Menucontrol : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Screen.SetResolution(1024, 768, false);
         diff = "Easy";
         mainmenu = GameObject.Find("main");
         optionmenu = GameObject.Find("optionmenu");
