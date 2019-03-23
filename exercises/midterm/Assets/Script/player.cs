@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
+
 
 public class player : MonoBehaviour
 {
     private GameObject option;
+    private GameObject optionhint;
     private GameObject textwindow;
     private GameObject question1;
+    private GameObject question5;
     private GameObject textshow;
     private GameObject end;
     private GameObject item;
@@ -21,6 +24,9 @@ public class player : MonoBehaviour
     private GameObject inputQ1;
     private GameObject questionimage;
     private GameObject questionexplain;
+    private GameObject hintnum;
+    private GameObject hinttext;
+    private GameObject q5hinttext;
     public GameObject lantern;
     public GameObject door1;
     public GameObject door2;
@@ -42,6 +48,7 @@ public class player : MonoBehaviour
     public Sprite q3img;
     public Sprite q4img;
     int key = 0;
+    int q5up, q5down, q5left, q5right;
     string diff;
     private AudioSource opendoorMusicAudioSource;
     private AudioSource unboxMusicAudioSource;
@@ -49,12 +56,17 @@ public class player : MonoBehaviour
     public GameObject timec;
     public float maxTime;//min
     public int maxTime_S;//sec
+    public int hint = 1;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        q5up = 0;
+        q5down = 0;
+        q5left = 0;
+        q5right = 0;
         Screen.SetResolution(1024, 768, false);
         diff = PlayerPrefs.GetString("diff");
         lantern = GameObject.Find("lantern");
@@ -72,6 +84,7 @@ public class player : MonoBehaviour
         textwindow= GameObject.Find("textwindow");
         textshow= GameObject.Find("Textshow");
         question1= GameObject.Find("Question1");
+        question5 = GameObject.Find("Question5");
         end = GameObject.Find("End");
         item = GameObject.Find("items");
         image1 = GameObject.Find("light");
@@ -82,6 +95,10 @@ public class player : MonoBehaviour
         questionimage= GameObject.Find("questionimage");
         difficultytext = GameObject.Find("difficulty");
         questionexplain = GameObject.Find("questionexplain");
+        hintnum= GameObject.Find("hintnum");
+        hinttext = GameObject.Find("hinttext");
+        q5hinttext = GameObject.Find("q5hinttext");
+        optionhint = GameObject.Find("optionhint");
         lantern.SetActive(false);
         opendoorMusicAudioSource = textwindow.GetComponent<AudioSource>();
         unboxMusicAudioSource = textshow.GetComponent<AudioSource>();
@@ -90,24 +107,24 @@ public class player : MonoBehaviour
         timec= GameObject.Find("time");
         if (diff == "Easy")
         {
-            maxTime = 5;
+            maxTime = 15;
         }
         else if (diff == "Normal")
         {
-            maxTime = 3;
+            maxTime = 7;
         }
         else if (diff == "Hard")
         {
-            maxTime = 1;
+            maxTime = 0.3f;
         }
-        maxTime_S = (int)maxTime * 60;
+        maxTime_S = (int)(maxTime * 60);
         InvokeRepeating("Time_J", 0.01f, 1.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        hintnum.GetComponent<Text>().text = "Hint: " + hint;
     }
     void OnTriggerEnter(Collider other)
     {
@@ -164,7 +181,9 @@ public class player : MonoBehaviour
                 Debug.Log("door4");
                 break;
             case "door5":
-                door5.SetActive(false); //test
+                itemoff();
+                source = "question5"; //test
+                questionon();
                 Debug.Log("door5");
                 break;
             case "door6":
@@ -223,6 +242,17 @@ public class player : MonoBehaviour
         
         optoff();
     }
+    public void onbtnhintyes()
+    {
+        maxTime_S = maxTime_S - 60;
+        gethint();
+        opthintoff();
+    }
+    public void onbtnhintno()
+    {
+
+        opthintoff();
+    }
     public void lightonoff()
     {
         if(lantern.activeSelf == true)
@@ -248,6 +278,19 @@ public class player : MonoBehaviour
         option.GetComponent<CanvasGroup>().interactable = false;
         option.GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
+    void opthinton()
+    {
+        optionhint.GetComponent<CanvasGroup>().alpha = 1;
+        optionhint.GetComponent<CanvasGroup>().interactable = true;
+        optionhint.GetComponent<CanvasGroup>().blocksRaycasts = true;
+    }
+    void opthintoff()
+    {
+
+        optionhint.GetComponent<CanvasGroup>().alpha = 0;
+        optionhint.GetComponent<CanvasGroup>().interactable = false;
+        optionhint.GetComponent<CanvasGroup>().blocksRaycasts = false;
+    }
     void txton(string txt,int fontsize)
     {
         textshow.GetComponent<Text>().text = txt;
@@ -267,7 +310,7 @@ public class player : MonoBehaviour
     }
     void itemoff()
     {
-        
+        hinttext.GetComponent<Text>().text = "";
         item.GetComponent<CanvasGroup>().alpha = 0;
         item.GetComponent<CanvasGroup>().interactable = false;
         item.GetComponent<CanvasGroup>().blocksRaycasts = false;
@@ -289,23 +332,35 @@ public class player : MonoBehaviour
 
                 break;
             case "question2":
-                questionexplain.GetComponent<Text>().text = "78963->852->7456852->789654123=?";
+                questionexplain.GetComponent<Text>().text = "78963->852->654852->789654123=?";
                 questionimage.GetComponent<Image>().sprite = q2img;
+                question1.GetComponent<CanvasGroup>().alpha = 1;
+                question1.GetComponent<CanvasGroup>().interactable = true;
+                question1.GetComponent<CanvasGroup>().blocksRaycasts = true;
                 break;
             case "question3":
                 questionexplain.GetComponent<Text>().text = "PRGB=?";
                 questionimage.GetComponent<Image>().sprite = q3img;
+                question1.GetComponent<CanvasGroup>().alpha = 1;
+                question1.GetComponent<CanvasGroup>().interactable = true;
+                question1.GetComponent<CanvasGroup>().blocksRaycasts = true;
                 break;
             case "question4":
                 questionexplain.GetComponent<Text>().text = "BACD=?";
                 questionimage.GetComponent<Image>().sprite = q4img;
+                question1.GetComponent<CanvasGroup>().alpha = 1;
+                question1.GetComponent<CanvasGroup>().interactable = true;
+                question1.GetComponent<CanvasGroup>().blocksRaycasts = true;
+                break;
+            case "question5":
+                question5.GetComponent<CanvasGroup>().alpha = 1;
+                question5.GetComponent<CanvasGroup>().interactable = true;
+                question5.GetComponent<CanvasGroup>().blocksRaycasts = true;
                 break;
 
 
         }
-        question1.GetComponent<CanvasGroup>().alpha = 1;
-        question1.GetComponent<CanvasGroup>().interactable = true;
-        question1.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        
 
     }
     void questionoff()
@@ -313,7 +368,9 @@ public class player : MonoBehaviour
         question1.GetComponent<CanvasGroup>().alpha = 0;
         question1.GetComponent<CanvasGroup>().interactable = false;
         question1.GetComponent<CanvasGroup>().blocksRaycasts = false;
-
+        question5.GetComponent<CanvasGroup>().alpha = 0;
+        question5.GetComponent<CanvasGroup>().interactable = false;
+        question5.GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
     void endon()
     {
@@ -326,7 +383,7 @@ public class player : MonoBehaviour
         maxTime_S--;
         timec.GetComponent<Text>().text = "Time: " + maxTime_S / 60 + "min " + maxTime_S % 60 + "sec";
         //print("Time：" + maxTime_S + "\t" + maxTime_S / 60 + "min" + maxTime_S % 60 + "sec");
-        if (maxTime_S == 0)
+        if (maxTime_S <= 0)
         {
             endon();
             itemoff();
@@ -390,7 +447,102 @@ public class player : MonoBehaviour
 
 
         }
-        
-        
+      }
+    public void onbtnchkexit()
+    {
+        reset();
+        questionoff();
+        itemon();
+    }
+    public void onbtnhint()
+    {
+        if (hint <= 0)
+        {
+            opthinton();
+        }
+        else
+        {
+            hint--;
+            gethint();
+
+
+        }
+    }
+    void gethint()
+    {
+        switch (source)
+        {
+            case "question2":
+                hinttext.GetComponent<Text>().text = "Connect the numbers on the image, you will get a number. For example, 78963 is '7'";
+                break;
+            case "question3":
+                hinttext.GetComponent<Text>().text = "P='Pink', R='Red',G='Green',B='blue'. Re-arange according to the colors";
+                break;
+            case "question4":
+                hinttext.GetComponent<Text>().text = "This game is like 'minesweeper', count the hexgons around each hexgon.";
+                break;
+            case "question5":
+                q5hinttext.GetComponent<Text>().text = "Focus on the '<', '>', '^', 'v' symbols";
+                break;
+        }
+    }
+    public void reset()
+    {
+        q5up = 0;
+        q5down = 0;
+        q5left = 0;
+        q5right = 0;
+    }
+    public void onbtnup()
+    {
+        q5up++;
+        if(q5up==2 && q5down==0 && q5left == 4 && q5right == 2)
+        {
+            txton("'Krr... creaaaaak....'The door is open", 90);
+            opendoorMusicAudioSource.Play();
+            door5.SetActive(false); //test
+            inputQ1.GetComponent<InputField>().text = "";
+            questionoff();
+            itemon();
+        }
+    }
+    public void onbtndown()
+    {
+        q5down++;
+        if (q5up == 2 && q5down == 0 && q5left == 4 && q5right == 2)
+        {
+            txton("'Krr... creaaaaak....'The door is open", 90);
+            opendoorMusicAudioSource.Play();
+            door5.SetActive(false); //test
+            inputQ1.GetComponent<InputField>().text = "";
+            questionoff();
+            itemon();
+        }
+    }
+    public void onbtnleft()
+    {
+        q5left++;
+        if (q5up == 2 && q5down == 0 && q5left == 4 && q5right == 2)
+        {
+            txton("'Krr... creaaaaak....'The door is open", 90);
+            opendoorMusicAudioSource.Play();
+            door5.SetActive(false); //test
+            inputQ1.GetComponent<InputField>().text = "";
+            questionoff();
+            itemon();
+        }
+    }
+    public void onbtnright()
+    {
+        q5right++;
+        if (q5up == 2 && q5down == 0 && q5left == 4 && q5right == 2)
+        {
+            txton("'Krr... creaaaaak....'The door is open", 90);
+            opendoorMusicAudioSource.Play();
+            door5.SetActive(false); //test
+            inputQ1.GetComponent<InputField>().text = "";
+            questionoff();
+            itemon();
+        }
     }
 }
