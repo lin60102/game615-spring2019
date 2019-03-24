@@ -15,6 +15,7 @@ public class player : MonoBehaviour
     private GameObject question5;
     private GameObject question6;
     private GameObject textshow;
+    private GameObject opt_text;
     private GameObject end;
     private GameObject item;
     private GameObject chest1;
@@ -92,6 +93,7 @@ public class player : MonoBehaviour
         Screen.SetResolution(1024, 768, false);
         diff = PlayerPrefs.GetString("diff");
         lantern = GameObject.Find("lantern");
+        opt_text = GameObject.Find("opt_text");
         chest1 = GameObject.Find("chest1b");
         chest2 = GameObject.Find("chest2b");
         chest3 = GameObject.Find("chest3b");
@@ -157,7 +159,7 @@ public class player : MonoBehaviour
         }
         else if (diff == "Hard")
         {
-            maxTime = 5;
+            maxTime = 1;
         }
         maxTime_S = (int)(maxTime * 60);
         InvokeRepeating("Time_J", 0.01f, 1.0f);
@@ -177,26 +179,31 @@ public class player : MonoBehaviour
         {
             case "chest1b":
                 choose = "chest1";
+                opt_text.GetComponent<Text>().text = "Do you want to open?";
                 opton();
                 Debug.Log("chest1b");
                 break;
             case "chest2b":
                 choose = "chest2";
+                opt_text.GetComponent<Text>().text = "Do you want to open?";
                 opton();
                 Debug.Log("chest2b");
                 break;
             case "chest3b":
                 choose = "chest3";
+                opt_text.GetComponent<Text>().text = "Do you want to open?";
                 opton();
                 Debug.Log("chest3b");
                 break;
             case "chest4b":
                 choose = "chest4";
+                opt_text.GetComponent<Text>().text = "Do you want to open?";
                 opton();
                 Debug.Log("chest4b");
                 break;
             case "chest5b":
                 choose = "chest5";
+                opt_text.GetComponent<Text>().text = "Do you want to open?";
                 opton();
                 Debug.Log("chest5b");
                 break;
@@ -349,6 +356,9 @@ public class player : MonoBehaviour
                 choose = "";
                 key++;
                 chest5.SetActive(false);
+                break;
+            case "mainmenu":
+                SceneManager.LoadScene("Mainmenu");
                 break;
         }   
 
@@ -695,5 +705,15 @@ public class player : MonoBehaviour
             txton("No repsonse... might be another password?", 90);
             maxTime_S = maxTime_S - 20;
         }
+    }
+    public void onbtnmainmenu()
+    {
+        SceneManager.LoadScene("Mainmenu");
+    }
+    public void onbtnitemmainmenu()
+    {
+        choose = "mainmenu";
+        opt_text.GetComponent<Text>().text = "are you sure to leave?";
+        opton();
     }
 }

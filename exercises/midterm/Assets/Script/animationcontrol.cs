@@ -63,6 +63,7 @@ public class animationcontrol : MonoBehaviour
 
             story3.SetActive(false);
             story4.GetComponent<CanvasGroup>().alpha = 1;
+            story4.GetComponent<CanvasGroup>().interactable = true;
             story4.GetComponent<CanvasGroup>().blocksRaycasts = true;
             story4anim.GetComponent<Animator>().SetBool("move", true);
         }
@@ -71,6 +72,7 @@ public class animationcontrol : MonoBehaviour
 
             story4.SetActive(false);
             story5.GetComponent<CanvasGroup>().alpha = 1;
+            story5.GetComponent<CanvasGroup>().interactable = true;
             story5.GetComponent<CanvasGroup>().blocksRaycasts = true;
             story5anim.GetComponent<Animator>().SetBool("move", true);
         }
