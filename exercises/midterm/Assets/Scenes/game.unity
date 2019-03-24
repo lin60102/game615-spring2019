@@ -9644,6 +9644,10 @@ PrefabInstance:
       propertyPath: MinDistance
       value: 0.42350912
       objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_Volume
+      value: 0.765
+      objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: field of view
       value: 55.515667
@@ -11081,7 +11085,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 177b729c5260a7c4ead672d5f89e7c70, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.202
+  m_Volume: 0.078
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -14388,7 +14392,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: de8f9aca73aebbf419b093b205ac0586, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.492
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -15730,7 +15734,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2fff15837cd42604ab692eec622f47eb, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.335
   m_Pitch: 1
   Loop: 0
   Mute: 0
