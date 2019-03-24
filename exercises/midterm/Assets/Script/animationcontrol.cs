@@ -18,9 +18,12 @@ public class animationcontrol : MonoBehaviour
     private GameObject story3anim;
     private GameObject story4anim;
     private GameObject story5anim;
+    private GameObject name;
     // Start is called before the first frame update
     void Start()
     {
+        name= GameObject.Find("name");
+        name.GetComponent<Text>().text= PlayerPrefs.GetString("name");
         Screen.SetResolution(1024, 768, false);
         story1 = GameObject.Find("story1");
         story2 = GameObject.Find("story2");

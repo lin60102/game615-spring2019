@@ -12,12 +12,14 @@ public class Menucontrol : MonoBehaviour
     public GameObject btneasy;
     public GameObject btnnormal;
     public GameObject btndiff;
+    public GameObject name;
     // Start is called before the first frame update
     void Start()
     {
         Screen.SetResolution(1024, 768, false);
         diff = "Easy";
         mainmenu = GameObject.Find("main");
+        name= GameObject.Find("name");
         optionmenu = GameObject.Find("optionmenu");
         btneasy= GameObject.Find("easyText");
         btnnormal = GameObject.Find("normalText");
@@ -49,6 +51,7 @@ public class Menucontrol : MonoBehaviour
     }
     public void onbtnstart()
     {
+        PlayerPrefs.SetString("name", name.GetComponent<InputField>().text);
         PlayerPrefs.SetString("diff", diff);
         SceneManager.LoadScene("story");
     }
