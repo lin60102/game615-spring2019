@@ -50,7 +50,7 @@ public class Menucontrol : MonoBehaviour
     public void onbtnstart()
     {
         PlayerPrefs.SetString("diff", diff);
-        SceneManager.LoadScene("game");
+        SceneManager.LoadScene("story");
     }
     public void onbtnopt()
     {
