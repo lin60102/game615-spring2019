@@ -33,21 +33,21 @@ public class Menucontrol : MonoBehaviour
     {
         if (diff == "Easy")
         {
-            btneasy.GetComponent<Text>().color = Color.yellow;
+            btneasy.GetComponent<Text>().color = Color.blue;
             btnnormal.GetComponent<Text>().color = Color.black;
             btndiff.GetComponent<Text>().color = Color.black;
         }
         else if (diff == "Normal")
         {
             btneasy.GetComponent<Text>().color = Color.black;
-            btnnormal.GetComponent<Text>().color = Color.yellow;
+            btnnormal.GetComponent<Text>().color = Color.blue;
             btndiff.GetComponent<Text>().color = Color.black;
         }
         else if (diff == "Hard")
         {
             btneasy.GetComponent<Text>().color = Color.black;
             btnnormal.GetComponent<Text>().color = Color.black;
-            btndiff.GetComponent<Text>().color = Color.yellow;
+            btndiff.GetComponent<Text>().color = Color.blue;
         }
 
     }

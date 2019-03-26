@@ -3227,7 +3227,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1.3
   m_Text: "<color=#0000ffff><b>Move:</b> </color>\nW,A,S,D \nArrow Keys\n<color=#0000ffff><b>Perspective:</b>
-    </color>\nMouse\n<color=#0000ffff><b>Jume:</b> </color>Space\n<color=#0000ffff><b>Speed
+    </color>\nMouse\n<color=#0000ffff><b>Jump:</b> </color>Space\n<color=#0000ffff><b>Speed
     Up:</b> </color>\nShift"
 --- !u!222 &1961220414
 CanvasRenderer:
