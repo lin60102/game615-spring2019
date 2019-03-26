@@ -311,7 +311,7 @@ public class player : MonoBehaviour
                 break;
             case "finalpaper4":
                 Debug.Log("finalpaper4");
-                txton("You find a piece of paper(IIII)", 100);
+                txton("You find a piece of paper(IV)", 100);
                 finalpaper4.SetActive(false);
                 finalpaperbool[3] = true;
                 break;
@@ -624,7 +624,7 @@ public class player : MonoBehaviour
                 hinttext.GetComponent<Text>().text = "P='Pink', R='Red',G='Green',B='blue'. Re-arange according to the colors";
                 break;
             case "question4":
-                hinttext.GetComponent<Text>().text = "This game is like 'minesweeper', count the hexgons around each hexgon.";
+                hinttext.GetComponent<Text>().text = "This game is like 'minesweeper', count the hexagons around each hexagon.";
                 break;
             case "question5":
                 q5hinttext.GetComponent<Text>().text = "Focus on the '<', '>', '^', 'v' symbols";
