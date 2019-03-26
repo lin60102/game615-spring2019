@@ -299,7 +299,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "You open it, and the letter shows that someone invite you to explore\r.
+  m_Text: "You open it, and the letter shows that someone invites you to explore\r.
     The address is 531 Key Circle, Washington, DC\n"
 --- !u!222 &103899097
 CanvasRenderer:
@@ -1420,8 +1420,8 @@ CanvasGroup:
   m_GameObject: {fileID: 866565526}
   m_Enabled: 1
   m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!114 &866565528
 MonoBehaviour:
