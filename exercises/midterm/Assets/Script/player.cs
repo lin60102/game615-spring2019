@@ -16,6 +16,8 @@ public class player : MonoBehaviour
     private GameObject question6;
     private GameObject textshow;
     private GameObject opt_text;
+    private GameObject Mainmenu;
+    private GameObject controlmenu;
     private GameObject end;
     private GameObject item;
     private GameObject chest1;
@@ -112,6 +114,8 @@ public class player : MonoBehaviour
         finalpaper3 = GameObject.Find("finalpaper3");
         finalpaper2 = GameObject.Find("finalpaper2");
         finalpaper1 = GameObject.Find("finalpaper1");
+        Mainmenu = GameObject.Find("Mainmenu");
+        controlmenu = GameObject.Find("Controlmenu");
         fp1 = GameObject.Find("FP1");
         fp2 = GameObject.Find("FP2");
         fp3 = GameObject.Find("FP3");
@@ -397,6 +401,7 @@ public class player : MonoBehaviour
         option.GetComponent<CanvasGroup>().alpha = 1;
         option.GetComponent<CanvasGroup>().interactable = true;
         option.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        
     }
     void optoff()
     {
@@ -712,8 +717,43 @@ public class player : MonoBehaviour
     }
     public void onbtnitemmainmenu()
     {
+        //CancelInvoke("Time_J");
+        itemoff();
+        Mainmenu.GetComponent<CanvasGroup>().alpha = 1;
+        Mainmenu.GetComponent<CanvasGroup>().interactable = true;
+        Mainmenu.GetComponent<CanvasGroup>().blocksRaycasts = true;
+    }
+    public void onbtnstartmenu()
+    {
         choose = "mainmenu";
         opt_text.GetComponent<Text>().text = "are you sure to leave?";
         opton();
+    }
+    public void onbtnresume()
+    {
+        //InvokeRepeating("Time_J", 0.01f, 1.0f);
+        Mainmenu.GetComponent<CanvasGroup>().alpha = 0;
+        Mainmenu.GetComponent<CanvasGroup>().interactable = false;
+        Mainmenu.GetComponent<CanvasGroup>().blocksRaycasts = false;
+        itemon();
+    }
+    public void onbtncontrol()
+    {
+        Mainmenu.GetComponent<CanvasGroup>().alpha = 0;
+        Mainmenu.GetComponent<CanvasGroup>().interactable = false;
+        Mainmenu.GetComponent<CanvasGroup>().blocksRaycasts = false;
+        controlmenu.GetComponent<CanvasGroup>().alpha = 1;
+        controlmenu.GetComponent<CanvasGroup>().interactable = true;
+        controlmenu.GetComponent<CanvasGroup>().blocksRaycasts = true;
+    }
+    public void onbtnok()
+    {
+        controlmenu.GetComponent<CanvasGroup>().alpha = 0;
+        controlmenu.GetComponent<CanvasGroup>().interactable = false;
+        controlmenu.GetComponent<CanvasGroup>().blocksRaycasts = false;
+        //InvokeRepeating("Time_J", 0.01f, 1.0f);
+        Mainmenu.GetComponent<CanvasGroup>().alpha = 1;
+        Mainmenu.GetComponent<CanvasGroup>().interactable = true;
+        Mainmenu.GetComponent<CanvasGroup>().blocksRaycasts = true;
     }
 }

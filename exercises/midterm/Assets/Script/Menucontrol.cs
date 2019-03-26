@@ -9,6 +9,7 @@ public class Menucontrol : MonoBehaviour
     public string diff;
     public GameObject mainmenu;
     public GameObject optionmenu;
+    public GameObject instructionmenu;
     public GameObject btneasy;
     public GameObject btnnormal;
     public GameObject btndiff;
@@ -21,7 +22,8 @@ public class Menucontrol : MonoBehaviour
         mainmenu = GameObject.Find("main");
         name= GameObject.Find("name");
         optionmenu = GameObject.Find("optionmenu");
-        btneasy= GameObject.Find("easyText");
+        instructionmenu = GameObject.Find("instructionmenu");
+        btneasy = GameObject.Find("easyText");
         btnnormal = GameObject.Find("normalText");
         btndiff = GameObject.Find("diffText");
     }
@@ -59,6 +61,20 @@ public class Menucontrol : MonoBehaviour
     {
         mainmuoff();
         optmuon();
+    }
+    public void onbtninstruction()
+    {
+        instructionmenu.GetComponent<CanvasGroup>().alpha = 1;
+        instructionmenu.GetComponent<CanvasGroup>().interactable = true;
+        instructionmenu.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        mainmuoff();
+    }
+    public void onbtninstructionok()
+    {
+        instructionmenu.GetComponent<CanvasGroup>().alpha = 0;
+        instructionmenu.GetComponent<CanvasGroup>().interactable = false;
+        instructionmenu.GetComponent<CanvasGroup>().blocksRaycasts = false;
+        mainmuon();
     }
     public void onbtnquit()
     {
