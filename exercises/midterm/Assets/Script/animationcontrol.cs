@@ -116,7 +116,7 @@ public class animationcontrol : MonoBehaviour
     }
     public void onbtns5skip()
     {
-       
+        story5.SetActive(false);
         SceneManager.LoadScene("game");
     }
 
