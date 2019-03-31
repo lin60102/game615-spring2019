@@ -491,6 +491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadePanelImg: {fileID: 2013143456}
+  Anim_player: {fileID: 1761390834}
 --- !u!4 &1042281198
 Transform:
   m_ObjectHideFlags: 0
@@ -786,10 +787,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e4f3d5d7b51ae94db9ffccadf4be339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mariotxt: {fileID: 0}
-  eat: {fileID: 0}
-  see: {fileID: 0}
-  Anim_player: {fileID: 0}
+  mariotxt: {fileID: 692520953}
+  eat: {fileID: 1836192291}
+  see: {fileID: 872237285}
+  Anim_player: {fileID: 1761390834}
 --- !u!95 &1761390834
 Animator:
   serializedVersion: 3
