@@ -10,34 +10,44 @@ using System.Collections.Generic;
 public class Path : MonoBehaviour {
 
 	public GameObject chessBox;	//這個用來放棋盤格(ChessBox)
-	public GameObject chessBoard; //這個用來放棋盤基底(BigChessBoard)
+    public GameObject attBox;
+    public GameObject chessBoard; //這個用來放棋盤基底(BigChessBoard)
 
 	public static Vector3 Position;	//用來記錄下一步的位置
-	//public static Vector3 PlayerPosition;	//玩家位置
+    public static Vector3 attPosition;	//用來記錄下一步的位置
+	public static Vector3 PlayerPosition;	//玩家位置
 
 	private bool check = true;	//用來判斷某一格是不是已經走過,若走過則為false
-	private bool monsterCheck = true;	//用來判斷下一格是否有怪物
+    private bool attcheck = true;
+    private bool monsterCheck = true;	//用來判斷下一格是否有怪物
 	public static bool camera = false;	//用來控制攝影機拉近拉遠,false拉近,true拉遠. 點選"移動"前是拉近的,故此處初值為false
 	public static bool button = true;	//用來控制Button出現的時機,true出現,false消失
 	public static bool cancel = false;	//用來取消任何戰鬥指令,在點選任意Button後,需將其變成true才能發揮作用
 
 	public int m; //m = 可移動數
-	public static int CanMove;	//記錄可移動數,第一輪需要
-	public static int index = 0;	//存入陣列用的引數
-	public static int Count = 0;	//取出陣例內容用的引數
+    public int attm; //m = 可攻擊數
+    public static int CanMove;	//記錄可移動數,第一輪需要
+    public static int CanAtt;
+    public static int index = 0;	//存入陣列用的引數
+    public static int attindex = 0;
+    public static int Count = 0;    //取出陣例內容用的引數
+    public static int attCount = 0;
 
-	private int i = 0; //迴圈計數用
+    private int i = 0; //迴圈計數用
 
 	public static List<int> mCount = new List<int>();	//用來記錄每次移動過後,剩餘的m值
-	public static List<Vector3> ppp = new List<Vector3>();	//用來記錄每次移動過後的新位置
+    public static List<int> attmCount = new List<int>();
+    public static List<Vector3> ppp = new List<Vector3>();	//用來記錄每次移動過後的新位置
+    public static List<Vector3> attppp = new List<Vector3>();
 
 
-//--------------------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------------------------------
 
-	void Start()
+    void Start()
 	{
-		//PlayerPosition = this.transform.position;	//用PlayerPosition儲存角色目前的位置
+		PlayerPosition = this.transform.position;	//用PlayerPosition儲存角色目前的位置
 		CanMove = m;	//把CanMove設定成最大移動數
+        CanAtt = attm;
 	}
 
 //--------------------------------------------------------------------------------------------------
@@ -83,16 +93,263 @@ public class Path : MonoBehaviour {
         
 
             camera = true;  //將鏡頭拉遠
-            button = false; //讓"移動"Button消失,防止重複點擊
+            
             ClickPosition.delete = false;   //delete為false時,棋盤格才能被顯示(克隆)
         chessBoard.SetActive(true); //顯示大棋盤
+        attpath();
         /*
             path(); //開始計算可行走範圍dfsdafsdfasdfa<<<
         */
     }
 
     //----------------------------------------------------------------------------------------------
+    void attpath()
+    {
 
+        for (i = 0; i < 500; i++)   //500最多可以算到16格
+        {
+
+            //第一輪,從Player位置出發,依序走上下左右
+            if (i == 0) //第一輪
+            {
+                //把起始位置存入陣列
+                attmCount.Insert(attindex, attm);
+                attppp.Insert(attindex, this.transform.position);
+                attindex++;
+
+
+                //向上走
+                for (int j = 0; j < MonsterPosition.mIndex; j++)
+                {
+                    if (((this.transform.position.z + 1) == MonsterPosition.monsterPosition[j].z) && (this.transform.position.x == MonsterPosition.monsterPosition[j].x))   //如果接下來要移動的那格有怪物
+                        monsterCheck = false;   //就把monsterCheck變成false
+                }
+
+                for (int j = 0; j < PartnerPosition.pIndex; j++)    //**新的迴圈,用來判斷隊友
+                {
+                    if (((this.transform.position.z + 1) == PartnerPosition.partnerPosition[j].z) && (this.transform.position.x == PartnerPosition.partnerPosition[j].x))   //如果接下來要移動的那格有怪物
+                        monsterCheck = false;   //就把monsterCheck變成false
+                }
+
+
+                if (monsterCheck == false)   //如果是ture,表示接下來要移動的那格沒有怪物
+                {
+                    attPosition = this.transform.position + new Vector3(0, 0, 1);  //那就走,然後由Position記錄新位置
+                    AttPathCount();    //記錄新位置,以及新位置的剩餘 m(行動力) 值
+                    attm = CanAtt;    //把 m 回歸最大值
+
+                }
+
+                monsterCheck = true;    //探索完一個方向就回歸初值
+
+
+                //向下走
+                for (int j = 0; j < MonsterPosition.mIndex; j++)
+                {
+                    if (((this.transform.position.z - 1) == MonsterPosition.monsterPosition[j].z) && (this.transform.position.x == MonsterPosition.monsterPosition[j].x))   //如果接下來要移動的那格有怪物
+                        monsterCheck = false;
+                }
+
+                for (int j = 0; j < PartnerPosition.pIndex; j++)//**新的迴圈,用來判斷隊友
+                {
+                    if (((this.transform.position.z - 1) == PartnerPosition.partnerPosition[j].z) && (this.transform.position.x == PartnerPosition.partnerPosition[j].x))   //如果接下來要移動的那格有怪物
+                        monsterCheck = false;
+                }
+
+
+                if (monsterCheck == false)
+                {
+                    attPosition = this.transform.position + new Vector3(0, 0, -1);
+                    AttPathCount();
+                    attm = CanAtt;
+
+                }
+
+                monsterCheck = true;
+
+
+                //向左走
+                for (int j = 0; j < MonsterPosition.mIndex; j++)
+                {
+                    if (((this.transform.position.x - 1) == MonsterPosition.monsterPosition[j].x) && (this.transform.position.z == MonsterPosition.monsterPosition[j].z))   //如果接下來要移動的那格有怪物
+                        monsterCheck = false;
+                }
+
+                for (int j = 0; j < PartnerPosition.pIndex; j++)//**新的迴圈,用來判斷隊友
+                {
+                    if (((this.transform.position.x - 1) == PartnerPosition.partnerPosition[j].x) && (this.transform.position.z == PartnerPosition.partnerPosition[j].z))   //如果接下來要移動的那格有怪物
+                        monsterCheck = false;
+                }
+
+
+                if (monsterCheck == false)
+                {
+                    attPosition = this.transform.position + new Vector3(-1, 0, 0);
+                    AttPathCount();
+                    attm = CanAtt;
+
+                }
+
+                monsterCheck = true;
+
+
+                //向右走
+                for (int j = 0; j < MonsterPosition.mIndex; j++)
+                {
+                    if (((this.transform.position.x + 1) == MonsterPosition.monsterPosition[j].x) && (this.transform.position.z == MonsterPosition.monsterPosition[j].z))   //如果接下來要移動的那格有怪物
+                        monsterCheck = false;
+                }
+
+                for (int j = 0; j < PartnerPosition.pIndex; j++)//**新的迴圈,用來判斷隊友
+                {
+                    if (((this.transform.position.x + 1) == PartnerPosition.partnerPosition[j].x) && (this.transform.position.z == PartnerPosition.partnerPosition[j].z))   //如果接下來要移動的那格有怪物
+                        monsterCheck = false;
+                }
+
+
+                if (monsterCheck == false)
+                {
+                    attPosition = this.transform.position + new Vector3(1, 0, 0);
+                    AttPathCount();
+                    attm = CanAtt;    // 最後一個可以不需要,因為第二輪開始的m,是從剛才陣列裡抓取的
+
+                }
+
+                monsterCheck = true;
+                attCount++;    //每走完一輪就+1,用以達到"更換出發點"的效果
+
+            }
+
+
+            //第2~n輪,換新出發點,上下左右
+            if (i != 0) //第2~n輪
+            {
+
+                //向上走
+                //取出陣列目前最前端的值,將曾經走過的某一點作為新出發點,並判斷下一步的位置是否有怪物. 另外,如果新出發點的m值<=0,表示不能再走
+                for (int j = 0; j < MonsterPosition.mIndex; j++)
+                {
+                    if (((attppp[attCount].z + 1) == MonsterPosition.monsterPosition[j].z) && (attppp[attCount].x == MonsterPosition.monsterPosition[j].x) && (attmCount[attCount] > 0))
+                        monsterCheck = false;
+                }
+
+                for (int j = 0; j < PartnerPosition.pIndex; j++)//**新的迴圈,用來判斷隊友
+                {
+                    if (((attppp[attCount].z + 1) == PartnerPosition.partnerPosition[j].z) && (attppp[attCount].x == PartnerPosition.partnerPosition[j].x) && (attmCount[attCount] > 0))
+                        monsterCheck = false;
+                }
+
+                if (monsterCheck == false)
+                {
+                    attPosition = attppp[attCount] + new Vector3(0, 0, 1);   //從新出發點往上走一格,然後由Position記錄移動後的位置
+                    attpppCheck(); //檢查現在試探的這格,之前是否走過
+                }
+
+                if (attcheck == true && monsterCheck == false && (attmCount[attCount] > 0))   //如果check = true,表示接下來這步還沒走過. monsterCheck = true,表示接下來這格沒怪物
+                    AttPathCount();    //記錄新位置,以及新位置的剩餘 m(行動力) 值
+
+                attcheck = true;   //把check回歸初值
+                monsterCheck = true;    //把monsterCheck回歸初值
+
+
+
+                //向下走
+                for (int j = 0; j < MonsterPosition.mIndex; j++)
+                {
+
+                    if (((attppp[attCount].z - 1) == MonsterPosition.monsterPosition[j].z) && (attppp[attCount].x == MonsterPosition.monsterPosition[j].x) && (attmCount[attCount] > 0))
+                        monsterCheck = false;
+                }
+
+                for (int j = 0; j < PartnerPosition.pIndex; j++)//**新的迴圈,用來判斷隊友
+                {
+
+                    if (((attppp[attCount].z - 1) == PartnerPosition.partnerPosition[j].z) && (attppp[attCount].x == PartnerPosition.partnerPosition[j].x) && (attmCount[attCount] > 0))
+                        monsterCheck = false;
+                }
+
+                if (monsterCheck == false)
+                {
+                    attPosition = attppp[attCount] + new Vector3(0, 0, -1);
+                    attpppCheck();
+                }
+
+                if (attcheck == true && monsterCheck == false && (attmCount[attCount] > 0))
+                    AttPathCount();
+
+                attcheck = true;
+                monsterCheck = true;
+
+
+                //向左走
+                for (int j = 0; j < MonsterPosition.mIndex; j++)
+                {
+                    if (((attppp[attCount].x - 1) == MonsterPosition.monsterPosition[j].x) && (attppp[attCount].z == MonsterPosition.monsterPosition[j].z) && (attmCount[attCount] > 0))
+                        monsterCheck = false;
+                }
+
+                for (int j = 0; j < PartnerPosition.pIndex; j++)//**新的迴圈,用來判斷隊友
+                {
+                    if (((attppp[attCount].x - 1) == PartnerPosition.partnerPosition[j].x) && (attppp[attCount].z == PartnerPosition.partnerPosition[j].z) && (attmCount[attCount] > 0))
+                        monsterCheck = false;
+                }
+
+                if (monsterCheck == false)
+                {
+                    attPosition = attppp[attCount] + new Vector3(-1, 0, 0);
+                    attpppCheck();
+                }
+
+                if (attcheck == true && monsterCheck == false && (attmCount[attCount] > 0))
+                    AttPathCount();
+
+                attcheck = true;
+                monsterCheck = true;
+
+
+                //向右走
+                for (int j = 0; j < MonsterPosition.mIndex; j++)
+                {
+                    if (((attppp[attCount].x + 1) == MonsterPosition.monsterPosition[j].x) && (attppp[attCount].z == MonsterPosition.monsterPosition[j].z) && (attmCount[attCount] > 0))
+                        monsterCheck = false;
+                }
+
+                for (int j = 0; j < PartnerPosition.pIndex; j++)//**新的迴圈,用來判斷隊友
+                {
+                    if (((attppp[attCount].x + 1) == PartnerPosition.partnerPosition[j].x) && (attppp[attCount].z == PartnerPosition.partnerPosition[j].z) && (attmCount[attCount] > 0))
+                        monsterCheck = false;
+                }
+
+                if (monsterCheck == true)
+                {
+                    attPosition = attppp[attCount] + new Vector3(1, 0, 0);
+                    attpppCheck();
+                }
+
+                if (attcheck == true && monsterCheck == false && (attmCount[attCount] > 0))
+                    AttPathCount();
+
+                attcheck = true;
+                monsterCheck = true;
+
+
+                //第一輪結束時,Count=1. 第二輪剛開始,會從第1個位置開始取出陣列值,意即ppp[1],mCount[1]
+                //第二輪結束時,把Count+1,下一輪才會取出陣列的第2個位置,意即ppp[2],mCount[2]
+                //用以達到"更換新出發點"的效果
+                attCount++;
+
+            }
+
+            //index為存入陣列用的索引值,若取出陣列用的索引值(Count)>=index,說明陣列已經搜索完畢
+            if (attCount >= attindex)
+                break;  //跳出迴圈
+
+        }
+
+        cancel = true;  //這時候按"右鍵"才有取消行動的功能
+
+    }
+    //---------------------
     void path()
 	{
 
@@ -355,9 +612,24 @@ public class Path : MonoBehaviour {
 		}
 	}
 
-//--------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------------
 
-	void PathCount()	//用來記錄、計算每一格的座標位置，以及每一格的 m(剩餘行動力) 值
+    void attpppCheck() //用來檢查某一格是否已經走過
+    {
+        for (int k = 0; k < attindex; k++) //跑遍ppp陣列裡所有的值
+        {
+            if (attPosition == attppp[k]) //如果接下來要走的一步,在陣列裡已經有了(表示曾經走過)
+            {
+                attcheck = false;  //把check變成false
+                break;  //跳出迴圈
+            }
+        }
+    }
+
+    //--------------------------------------------------------------------------------------
+
+    void PathCount()	//用來記錄、計算每一格的座標位置，以及每一格的 m(剩餘行動力) 值
 	{
 		//在新位置上,克隆一個棋盤格
 		//Position.x(新位置的X座標),Position.z(新位置的Z座標)
@@ -369,16 +641,33 @@ public class Path : MonoBehaviour {
 		index++;	//把儲存用的引數+1
 	}
 
-//---------------------------------------------------------------------------------------
+    //---------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------------------
 
-	void Reset()
+    void AttPathCount()    //用來記錄、計算每一格的座標位置，以及每一格的 m(剩餘行動力) 值
+    {
+        //在新位置上,克隆一個棋盤格
+        //Position.x(新位置的X座標),Position.z(新位置的Z座標)
+        Instantiate(attBox, new Vector3(attPosition.x, 0.01f, attPosition.z), chessBox.transform.rotation);
+        attm = attmCount[attCount] - 1;  //行動數-1(mCount[Count]是移動前的m值,因為ppp[Count]是移動前的位置)
+        attmCount.Insert(attindex, attm);    //把這次移動過後剩餘的m值,存入陣列
+        attppp.Insert(attindex, attPosition);    //把這次移動過後的新位置,存入陣列
+        attindex++;    //把儲存用的引數+1
+    }
+
+    //---------------------------------------------------------------------------------------
+    void Reset()
 	{
 		button = true; //將"移動"Button顯示出來
 		index = 0;	//存入ppp[]用的索引值歸0(初值)
-		Count = 0;	//取出ppp[]用的索引值歸0(初值)
-		ppp.Clear();	//清空儲存行走範圍的陣列
-		mCount.Clear();	//清空儲存 m 值的陣列
-	}
+        attindex = 0;
+        Count = 0;	//取出ppp[]用的索引值歸0(初值)
+        attCount = 0;
+        ppp.Clear();	//清空儲存行走範圍的陣列
+        attppp.Clear();
+        mCount.Clear();	//清空儲存 m 值的陣列
+        attmCount.Clear();
+    }
 
 //---------------------------------------------------------------------------------------
 

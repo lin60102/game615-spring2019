@@ -2,10 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-//=================================================================
-//	用於計算最短行走距離(從玩家目前的位置~被點選的棋盤格)
-//	並於點選完成後,將部份與"移動"有關的參數回歸初值
-//=================================================================
+
 
 public class ClickPosition : MonoBehaviour {
 
@@ -23,14 +20,14 @@ public class ClickPosition : MonoBehaviour {
 
 
 
-//--------------------------------------------------------------------
+
 
 	void Start()
 	{
 	
 	}
 
-//--------------------------------------------------------------------
+
 
 	void Update()
 	{
@@ -40,7 +37,6 @@ public class ClickPosition : MonoBehaviour {
 	
 	}
 
-//---------------------計算最短移動路徑----------------------------------
 
 	void OnMouseDown()
 	{
@@ -91,17 +87,14 @@ public class ClickPosition : MonoBehaviour {
 		}
 	
 			
-		//for(int j = targetChess - 1; j >= 0; j--)	//可以查看結果正不正確(將路徑搜尋的結果倒印)
-		//	Debug.Log ("aaa = " + aaa[j]);
-
-		//Debug.Log ("Destination = " + nowPosition);	//可以查看路徑搜尋的結果,是不是從目標點回到原點
+		
 
 
-		delete = true;	//算完最短路徑之後,將delete設為true,藉此刪除棋盤
-		Path.camera = false;	//移動前拉近攝影機
-		chose = true;	//這時候角色才能開始移動(請見PlayerController的腳本)
-		Path.cancel = false;	//令滑鼠"右鍵"的功能失效,防止移動中亂按的誤判
-		ChessBoard = true;	//隱藏大棋盤
+		delete = true;	
+		Path.camera = false;	
+		chose = true;	
+		Path.cancel = false;	
+		ChessBoard = true;	
 
 
 	}

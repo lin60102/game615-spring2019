@@ -1,103 +1,181 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-//=================================================================
-//	用於平滑移動角色,並於移動完成後,將部份與"移動"有關的參數回歸初值
-//=================================================================
 
 public class PlayerController : MonoBehaviour {
 
 
-	public int MoveSpeed;	//用來調整移動速度,數值越大越快
-
-	//aaa[targetChess - 2] = 起始位置的下一個位置,因為aaa[targetChess]是空的,aaa[targetChess-1]是起始位置
-	private int i = 2;	
-
+	public int MoveSpeed;  
+    private Animator animator;
+    
+    private int i = 2;
+    void Start()
+   {
+         animator = GetComponent<Animator>();
+ 
+   }
 
 //------------------------------------------------------------------------------------
 
-	void Update()
+void Update()
 	{
-		if(Input.GetButtonDown("Fire1") && ClickPosition.chose == true )	//按下滑鼠左鍵,而且判定是點擊了ChessBox
+		if(Input.GetButtonDown("Fire1") && ClickPosition.chose == true )	
 		{
-			StartCoroutine (move());	//啟動計數器,用於move()
-			ClickPosition.chose = false;	//令滑鼠左鍵失效,防止移動中重複點擊,造成計算錯誤
+            animator.SetBool("go", true);
+            StartCoroutine (move());	
+			ClickPosition.chose = false;	
 		
 		}
-	}
+        if (ClickattPosition.att == true)
+        {
+            animator.SetBool("att", true);
+            StartCoroutine(att());
+            ClickattPosition.att = false;
 
-//------------------------------------------------------------------------------------
+        }
+    }
 
-	public IEnumerator move()
+    //------------------------------------------------------------------------------------
+    public IEnumerator att()
+    {
+        while (true)
+        {
+
+            Vector3 distance = ClickattPosition.aaa[ClickattPosition.targetChess - i] - this.transform.position;
+
+            float len = distance.magnitude;
+
+            distance.Normalize();
+
+
+
+            if (distance.x > 0.1f)
+                this.transform.eulerAngles = new Vector3(0, 90, 0);
+
+
+            if (distance.x < -0.1f)
+                this.transform.eulerAngles = new Vector3(0, -90, 0);
+
+            if (distance.z > 0.9f)
+                this.transform.eulerAngles = new Vector3(0, 0, 0);
+
+
+            if (distance.z < -0.9f)
+                this.transform.eulerAngles = new Vector3(0, 180, 0);
+
+
+    
+/*
+            if (len <= (distance.magnitude * Time.deltaTime * 2))
+            {
+
+                this.transform.position = ClickattPosition.aaa[ClickattPosition.targetChess - i];
+                i++;
+                if (ClickattPosition.targetChess - i < 0)
+                {
+                    i = 2;
+                    break;
+                }
+
+            }
+*/
+           
+            yield return new WaitForSeconds(1 / MoveSpeed);
+            break;
+           // this.transform.position = this.transform.position + (distance * Time.deltaTime * 2);
+        }
+
+        animator.SetBool("att", false);
+        ClickattPosition.delete = false;
+
+        Path.attindex = 0;
+        Path.attCount = 0;
+        ClickattPosition.mSave = 0;
+        ClickattPosition.targetChess = 0;
+
+        Path.attppp.Clear();
+        Path.attmCount.Clear();
+        ClickattPosition.aaa.Clear();
+
+        //Path.button = true;
+
+        ClickattPosition.ChessBoard = false;
+
+
+    }
+    //------------------------------------------------------------------------------------
+    public IEnumerator move()
 	{	
 		while(true)
 		{
-
-			//計算目標點和現在的座標差(這是一個向量)
+            
 			Vector3 distance = ClickPosition.aaa[ClickPosition.targetChess - i] - this.transform.position;
-			//將座標差換算成長度(純量)
+			
 			float len = distance.magnitude;	
 						
-			distance.Normalize ();	//將座標差轉換成單位向量的資料型態(向量)
+			distance.Normalize ();	
 				
 
-			//往右的旋轉值
+			
 			if(distance.x > 0.1f)
 				this.transform.eulerAngles = new Vector3(0,90,0);	
 
-			//往左的旋轉值
+		
 			 if(distance.x < -0.1f)
 				this.transform.eulerAngles = new Vector3(0,-90,0);	
-
-			//往上的旋轉值
+             
 			 if(distance.z > 0.9f)
 				this.transform.eulerAngles = new Vector3(0,0,0);
 
-			//往下的旋轉值
+			
 			 if(distance.z < -0.9f)
 				this.transform.eulerAngles = new Vector3(0,180,0);
 
 
 
-			//如果目標點與現在的位置,距離低於這一幀的長度
-			if (len <= (distance.magnitude * Time.deltaTime * 2))	//distance.magnitude是一個純量
+			
+			if (len <= (distance.magnitude * Time.deltaTime * 2))	
 			{
-				//把現在位置強制設定成目標位置
+				
 				this.transform.position = ClickPosition.aaa[ClickPosition.targetChess - i];	
-				i++;	//索引值+1
-				if(ClickPosition.targetChess - i < 0)	//aaa[-1]不存在
+				i++;	
+				if(ClickPosition.targetChess - i < 0)	
 				{
-					i = 2;	//將 i 回歸初值
-					break;	//跳出迴圈
+					i = 2;	
+					break;	
 				}
 				
 			}
 
-			//Delay time 單位:秒
+			
 			yield return new WaitForSeconds(1/MoveSpeed);
-			//隨時間移動目前座標
-			this.transform.position = this.transform.position + (distance * Time.deltaTime * 2); //distance是一個向量
-		}
+			
+			this.transform.position = this.transform.position + (distance * Time.deltaTime * 2);
+            if (this.transform.position.x > 4) { this.transform.position = new Vector3(4, this.transform.position.y, this.transform.position.z); break; }
+            if (this.transform.position.x < -4) { this.transform.position = new Vector3(-4, this.transform.position.y, this.transform.position.z); break; }
+            if (this.transform.position.z > 4) { this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, 4); break; }
+            if (this.transform.position.z < -4) { this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -4); break; }
+        }
 
+        animator.SetBool("go", false);
+        ClickPosition.delete = false;
 
-		ClickPosition.delete = false;	//把用於刪除chessbox的bool值,回歸false(初值)
+		Path.index = 0;
+		Path.Count = 0;	
+		ClickPosition.mSave = 0;	
+		ClickPosition.targetChess = 0;	
 
-		Path.index = 0;	//存入ppp[]用的索引值歸0(初值)
-		Path.Count = 0;	//取出ppp[]用的索引值歸0(初值)
-		ClickPosition.mSave = 0;	//暫存最大 m 值的變數歸0(初值)
-		ClickPosition.targetChess = 0;	//存入和取出aaa[]用的索引值歸0(初值)
+		Path.ppp.Clear();	
+		Path.mCount.Clear();	
+		ClickPosition.aaa.Clear ();
 
-		Path.ppp.Clear();	//清空儲存行走範圍的陣列
-		Path.mCount.Clear();	//清空儲存 m 值的陣列
-		ClickPosition.aaa.Clear ();	//清空儲存最短行走路徑的陣列
+		Path.button = true; 
 
-		Path.button = true; //將"移動"Button顯示出來
-
-		ClickPosition.ChessBoard = false; //移動完畢後,將隱藏大棋盤的bool回歸初值(false)
+		ClickPosition.ChessBoard = false; 
 
 
 	}
 
-//------------------------------------------------------------------------------------
+
 
 }
