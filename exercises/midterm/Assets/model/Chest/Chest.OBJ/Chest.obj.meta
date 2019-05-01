@@ -18,11 +18,6 @@ ModelImporter:
     2100000: _Color_002_1
     2100002: Color_001
     2100004: FrontColor
-    2100006: Mesh1_Group1_ModelMat
-    2100008: Mesh2_Group2_ModelMat
-    2100010: Mesh3_Group3_ModelMat
-    2100012: Mesh4_Group4_ModelMat
-    2100014: Mesh5_ModelMat
     2300000: Mesh1_Group1_Model
     2300002: Mesh2_Group2_Model
     2300004: Mesh3_Group3_Model
