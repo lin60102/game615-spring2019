@@ -92,11 +92,11 @@ public class Path : MonoBehaviour {
     {
         
 
-            camera = true;  //將鏡頭拉遠
-            
-            ClickPosition.delete = false;   //delete為false時,棋盤格才能被顯示(克隆)
+        camera = true;  //將鏡頭拉遠
+        ClickPosition.delete = false;   //delete為false時,棋盤格才能被顯示(克隆)
         chessBoard.SetActive(true); //顯示大棋盤
         attpath();
+        //GameManager.heroturn = false;
         /*
             path(); //開始計算可行走範圍dfsdafsdfasdfa<<<
         */

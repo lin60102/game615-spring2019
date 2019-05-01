@@ -7,7 +7,8 @@ public class PlayerController : MonoBehaviour {
 
 	public int MoveSpeed;  
     private Animator animator;
-    
+    public GameObject attbox;
+
     private int i = 2;
     void Start()
    {
@@ -19,7 +20,9 @@ public class PlayerController : MonoBehaviour {
 
 void Update()
 	{
-		if(Input.GetButtonDown("Fire1") && ClickPosition.chose == true )	
+        if (!attbox) { ClickattPosition.canmove = true; }
+        Debug.Log(attbox);
+        if (Input.GetButtonDown("Fire1") && ClickPosition.chose == true )	
 		{
             animator.SetBool("go", true);
             StartCoroutine (move());	

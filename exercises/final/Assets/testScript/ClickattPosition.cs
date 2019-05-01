@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class ClickattPosition : MonoBehaviour {
 
 	public Material chessColor;	//用來放棋盤格顏色的材質球
-
+    
 	public static int mSave = 0;	//暫存探索位置的 m 值,用於比較大小
 	public static int targetChess = 0;	//存取aaa陣列的引數
 	private int i = 0;	//迴圈計數用
@@ -14,6 +14,7 @@ public class ClickattPosition : MonoBehaviour {
 	public static bool ChessBoard = false; //為true時,隱藏大棋盤
 	public static bool att = false;	//防止移動中偵測到滑鼠"左鍵"被點擊的誤判
 	public static bool delete = false;	//用於判斷刪除棋盤的時機
+    public static bool canmove = false;
     public static Vector3 nowPosition;
 
     public static List<Vector3> aaa = new List<Vector3>();	//用來儲存最短路徑的陣列
@@ -31,11 +32,11 @@ public class ClickattPosition : MonoBehaviour {
 
 	void Update()
 	{
-		if(delete == true)	//計算完最短行走路徑後
-			Destroy (gameObject);	//刪除本地物件(意即ChessBox)
+        if (delete == true)  //計算完最短行走路徑後
+        { Destroy(gameObject); }	//刪除本地物件(意即ChessBox)
+        
 
-	
-	}
+    }
 
 //---------------------計算最短移動路徑----------------------------------
 
@@ -97,10 +98,11 @@ public class ClickattPosition : MonoBehaviour {
 		Path.camera = false;	//移動前拉近攝影機
 		att = true;	//這時候角色才能開始移動(請見PlayerController的腳本)
 		Path.cancel = false;	//令滑鼠"右鍵"的功能失效,防止移動中亂按的誤判
-		ChessBoard = true;	//隱藏大棋盤
+		ChessBoard = true;  //隱藏大棋盤
+        canmove = true;
 
 
-	}
+    }
 
 //--------------------------------------------------------------------------------------
 
