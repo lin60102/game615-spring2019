@@ -157,12 +157,12 @@ void Update()
 			yield return new WaitForSeconds(1/MoveSpeed);
 			
 			this.transform.position = this.transform.position + (distance * Time.deltaTime * 2);
-          //  if (this.transform.position.x > 4) { this.transform.position = new Vector3(4, this.transform.position.y, this.transform.position.z); break; }
-           // if (this.transform.position.x < -4) { this.transform.position = new Vector3(-4, this.transform.position.y, this.transform.position.z); break; }
-           // if (this.transform.position.z > 4) { this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, 4); break; }
-           // if (this.transform.position.z < -4) { this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -4); break; }
+          
         }
-
+          if (this.transform.position.x > 4) { this.transform.position = new Vector3(4, this.transform.position.y, this.transform.position.z);  }
+         if (this.transform.position.x < -4) { this.transform.position = new Vector3(-4, this.transform.position.y, this.transform.position.z); }
+         if (this.transform.position.z > 4) { this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, 4);  }
+         if (this.transform.position.z < -4) { this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -4);  }
         animator.SetBool("go", false);
         ClickPosition.delete = false;
 
