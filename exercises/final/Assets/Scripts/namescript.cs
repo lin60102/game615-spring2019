@@ -125,7 +125,7 @@ public void btna()
     public void ok()
     {
         PlayerPrefs.SetString("heroname",title.GetComponent<Text>().text);
-        SceneManager.LoadScene("maingame");
+        SceneManager.LoadScene("stage1");
         PlayerPrefs.SetInt("speed", 3);
         PlayerPrefs.SetInt("dmg", 5);
         PlayerPrefs.SetInt("herohp", 20);
