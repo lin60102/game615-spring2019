@@ -10,7 +10,7 @@ using System.Collections.Generic;
 public class Path : MonoBehaviour {
 
 	public GameObject chessBox;	//這個用來放棋盤格(ChessBox)
-    public GameObject attBox;
+    public GameObject attBox,endbtn,attbtn;
     public GameObject chessBoard; //這個用來放棋盤基底(BigChessBoard)
 
 	public static Vector3 Position;	//用來記錄下一步的位置
@@ -45,8 +45,13 @@ public class Path : MonoBehaviour {
 
     void Start()
 	{
-		PlayerPosition = this.transform.position;	//用PlayerPosition儲存角色目前的位置
-		CanMove = m;	//把CanMove設定成最大移動數
+        //test----------
+        //PlayerPrefs.SetInt("speed", 3);
+        //PlayerPrefs.SetInt("dmg", 5);
+        //------------
+        PlayerPosition = this.transform.position;   //用PlayerPosition儲存角色目前的位置
+        m = PlayerPrefs.GetInt("speed");
+        CanMove = m;	//把CanMove設定成最大移動數
         CanAtt = attm;
 	}
 
@@ -76,9 +81,10 @@ public class Path : MonoBehaviour {
 
     public void btnclick_move()
     {
+
         if (button == true)
         {
-            
+                endbtn.SetActive(false);
                 camera = true;  //將鏡頭拉遠
                 button = false; //讓"移動"Button消失,防止重複點擊
                 ClickPosition.delete = false;   //delete為false時,棋盤格才能被顯示(克隆)
@@ -90,8 +96,8 @@ public class Path : MonoBehaviour {
     }
     public void btnclick_att()
     {
-        
 
+        endbtn.SetActive(false);
         camera = true;  //將鏡頭拉遠
         ClickPosition.delete = false;   //delete為false時,棋盤格才能被顯示(克隆)
         chessBoard.SetActive(true); //顯示大棋盤
@@ -139,6 +145,7 @@ public class Path : MonoBehaviour {
                     attm = CanAtt;    //把 m 回歸最大值
 
                 }
+                else { if (endbtn) { endbtn.SetActive(true); } if (attbtn) { attbtn.SetActive(false); } }
 
                 monsterCheck = true;    //探索完一個方向就回歸初值
 
@@ -164,6 +171,7 @@ public class Path : MonoBehaviour {
                     attm = CanAtt;
 
                 }
+                else { if (endbtn) { endbtn.SetActive(true); } if (attbtn) { attbtn.SetActive(false); } }
 
                 monsterCheck = true;
 
@@ -189,6 +197,7 @@ public class Path : MonoBehaviour {
                     attm = CanAtt;
 
                 }
+                else { if (endbtn) { endbtn.SetActive(true); } if (attbtn) { attbtn.SetActive(false); } }
 
                 monsterCheck = true;
 
@@ -214,6 +223,7 @@ public class Path : MonoBehaviour {
                     attm = CanAtt;    // 最後一個可以不需要,因為第二輪開始的m,是從剛才陣列裡抓取的
 
                 }
+                else { endbtn.SetActive(true); }
 
                 monsterCheck = true;
                 attCount++;    //每走完一輪就+1,用以達到"更換出發點"的效果
@@ -339,7 +349,7 @@ public class Path : MonoBehaviour {
                 attCount++;
 
             }
-
+            
             //index為存入陣列用的索引值,若取出陣列用的索引值(Count)>=index,說明陣列已經搜索完畢
             if (attCount >= attindex)
                 break;  //跳出迴圈
@@ -649,6 +659,8 @@ public class Path : MonoBehaviour {
         //在新位置上,克隆一個棋盤格
         //Position.x(新位置的X座標),Position.z(新位置的Z座標)
         Instantiate(attBox, new Vector3(attPosition.x, 0.01f, attPosition.z), chessBox.transform.rotation);
+        
+        if (!attBox) { endbtn.SetActive(true); }
         attm = attmCount[attCount] - 1;  //行動數-1(mCount[Count]是移動前的m值,因為ppp[Count]是移動前的位置)
         attmCount.Insert(attindex, attm);    //把這次移動過後剩餘的m值,存入陣列
         attppp.Insert(attindex, attPosition);    //把這次移動過後的新位置,存入陣列

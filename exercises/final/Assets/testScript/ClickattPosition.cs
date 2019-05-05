@@ -10,8 +10,8 @@ public class ClickattPosition : MonoBehaviour {
 	public static int mSave = 0;	//暫存探索位置的 m 值,用於比較大小
 	public static int targetChess = 0;	//存取aaa陣列的引數
 	private int i = 0;	//迴圈計數用
-
-	public static bool ChessBoard = false; //為true時,隱藏大棋盤
+    public GameObject btnatt,btnend;
+    public static bool ChessBoard = false; //為true時,隱藏大棋盤
 	public static bool att = false;	//防止移動中偵測到滑鼠"左鍵"被點擊的誤判
 	public static bool delete = false;	//用於判斷刪除棋盤的時機
     public static bool canmove = false;
@@ -25,8 +25,10 @@ public class ClickattPosition : MonoBehaviour {
 
 	void Start()
 	{
-	
-	}
+        btnatt = GameObject.Find("Attact");
+        btnend= GameObject.Find("end");
+
+    }
 
 //--------------------------------------------------------------------
 
@@ -42,8 +44,9 @@ public class ClickattPosition : MonoBehaviour {
 
 	void OnMouseDown()
 	{
-
-		nowPosition = this.transform.position;	//設定nowPosition = 被按下的座標
+        if (btnatt) { btnatt.SetActive(false); }
+        
+        nowPosition = this.transform.position;	//設定nowPosition = 被按下的座標
 	
 		//先記錄目前點下的位置,它的 m 值是多少
 		for (int z = 0; z < Path.attCount; z++) 
@@ -90,7 +93,7 @@ public class ClickattPosition : MonoBehaviour {
 
 
         //for(int j = targetChess - 1; j >= 0; j--)	//可以查看結果正不正確(將路徑搜尋的結果倒印)
-        //	Debug.Log ("aaa = " + aaa[j]);
+        	//Debug.Log ("aaa = " + aaa[j]);
 
         //Debug.Log ("Destination = " + nowPosition);	//可以查看路徑搜尋的結果,是不是從目標點回到原點
         //nowPosition = new Vector3(0, 0, 0);

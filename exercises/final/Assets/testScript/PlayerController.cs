@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour {
 
 	public int MoveSpeed;  
     private Animator animator;
-    public GameObject attbox;
+    public GameObject attbox, endbtn;
 
     private int i = 2;
     void Start()
@@ -41,6 +41,7 @@ void Update()
     //------------------------------------------------------------------------------------
     public IEnumerator att()
     {
+       
         while (true)
         {
 
@@ -103,13 +104,15 @@ void Update()
         //Path.button = true;
 
         ClickattPosition.ChessBoard = false;
+        endbtn.SetActive(true);
 
 
     }
     //------------------------------------------------------------------------------------
     public IEnumerator move()
-	{	
-		while(true)
+	{
+        
+        while (true)
 		{
             
 			Vector3 distance = ClickPosition.aaa[ClickPosition.targetChess - i] - this.transform.position;
@@ -174,10 +177,10 @@ void Update()
 
 		Path.button = true; 
 
-		ClickPosition.ChessBoard = false; 
+		ClickPosition.ChessBoard = false;
+        endbtn.SetActive(true);
 
-
-	}
+    }
 
 
 
