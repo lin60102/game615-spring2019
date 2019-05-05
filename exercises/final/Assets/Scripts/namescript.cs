@@ -65,6 +65,7 @@ public void btna()
     }
     public void btnj()
     {
+        clean();
         title.GetComponent<Text>().text = title.GetComponent<Text>().text + "j";
     }
     public void btnk()
@@ -74,6 +75,7 @@ public void btna()
     }
     public void btnl()
     {
+        clean();
         title.GetComponent<Text>().text = title.GetComponent<Text>().text + "l";
     }
     public void btnm()
@@ -83,6 +85,7 @@ public void btna()
     }
     public void btnn()
     {
+        clean();
         title.GetComponent<Text>().text = title.GetComponent<Text>().text + "n";
     }
     public void btno()
@@ -107,6 +110,7 @@ public void btna()
     }
     public void btns()
     {
+        clean();
         title.GetComponent<Text>().text = title.GetComponent<Text>().text + "s";
     }
     public void btnt()
@@ -141,6 +145,7 @@ public void btna()
     }
     public void btnz()
     {
+        clean();
         title.GetComponent<Text>().text = title.GetComponent<Text>().text + "z";
     }
     public void ok()
