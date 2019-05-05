@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
         dmg= PlayerPrefs.GetInt("dmg");
         //PlayerPrefs.SetInt("herohp", 20);
         herohpint=PlayerPrefs.GetInt("herohp");
-        Screen.SetResolution(1024, 768, false);
+        Screen.SetResolution(1024, 768, true);
         //animatormon1 = GetComponent<Animator>();
         //animatormon2 = GetComponent<Animator>();
         mon1vt = new Vector3(0, 0, 0);
