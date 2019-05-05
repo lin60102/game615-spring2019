@@ -2,9 +2,12 @@
 using System.Collections;
 
 public class ApplicationManager : MonoBehaviour {
-	
 
-	public void Quit () 
+    void Start()
+    {
+        Screen.SetResolution(1024, 768, false);
+    }
+    public void Quit () 
 	{
 		#if UNITY_EDITOR
 		UnityEditor.EditorApplication.isPlaying = false;
