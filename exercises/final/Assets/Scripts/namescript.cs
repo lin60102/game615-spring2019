@@ -20,38 +20,47 @@ public class namescript : MonoBehaviour
     }
 public void btna()
     {
+        clean();
         title.GetComponent<Text>().text = title.GetComponent<Text>().text + "a";
     }
     public void btnb()
     {
+        clean();
         title.GetComponent<Text>().text = title.GetComponent<Text>().text + "b";
     }
     public void btnc()
     {
+        clean();
         title.GetComponent<Text>().text = title.GetComponent<Text>().text + "c";
     }
     public void btnd()
     {
+        clean();
         title.GetComponent<Text>().text = title.GetComponent<Text>().text + "d";
     }
     public void btne()
     {
+        clean();
         title.GetComponent<Text>().text = title.GetComponent<Text>().text + "e";
     }
     public void btnf()
     {
+        clean();
         title.GetComponent<Text>().text = title.GetComponent<Text>().text + "f";
     }
     public void btng()
     {
+        clean();
         title.GetComponent<Text>().text = title.GetComponent<Text>().text + "g";
     }
     public void btnh()
     {
+        clean();
         title.GetComponent<Text>().text = title.GetComponent<Text>().text + "h";
     }
     public void btni()
     {
+        clean();
         title.GetComponent<Text>().text = title.GetComponent<Text>().text + "i";
     }
     public void btnj()
@@ -60,6 +69,7 @@ public void btna()
     }
     public void btnk()
     {
+        clean();
         title.GetComponent<Text>().text = title.GetComponent<Text>().text + "k";
     }
     public void btnl()
@@ -68,6 +78,7 @@ public void btna()
     }
     public void btnm()
     {
+        clean();
         title.GetComponent<Text>().text = title.GetComponent<Text>().text + "m";
     }
     public void btnn()
@@ -76,18 +87,22 @@ public void btna()
     }
     public void btno()
     {
+        clean();
         title.GetComponent<Text>().text = title.GetComponent<Text>().text + "o";
     }
     public void btnp()
     {
+        clean();
         title.GetComponent<Text>().text = title.GetComponent<Text>().text + "p";
     }
     public void btnq()
     {
+        clean();
         title.GetComponent<Text>().text = title.GetComponent<Text>().text + "q";
     }
     public void btnr()
     {
+        clean();
         title.GetComponent<Text>().text = title.GetComponent<Text>().text + "r";
     }
     public void btns()
@@ -96,26 +111,32 @@ public void btna()
     }
     public void btnt()
     {
+        clean();
         title.GetComponent<Text>().text = title.GetComponent<Text>().text + "t";
     }
     public void btnu()
     {
+        clean();
         title.GetComponent<Text>().text = title.GetComponent<Text>().text + "u";
     }
     public void btnv()
     {
+        clean();
         title.GetComponent<Text>().text = title.GetComponent<Text>().text + "v";
     }
     public void btnw()
     {
+        clean();
         title.GetComponent<Text>().text = title.GetComponent<Text>().text + "w";
     }
     public void btnx()
     {
+        clean();
         title.GetComponent<Text>().text = title.GetComponent<Text>().text + "x";
     }
     public void btny()
     {
+        clean();
         title.GetComponent<Text>().text = title.GetComponent<Text>().text + "y";
     }
     public void btnz()
@@ -135,5 +156,9 @@ public void btna()
     {
         title.GetComponent<Text>().text ="";
 
+    }
+    void clean()
+    {
+        if(title.GetComponent<Text>().text == "Korean Fish") { title.GetComponent<Text>().text = ""; }
     }
 }
