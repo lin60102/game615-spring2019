@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour
        
         
 
-        if (Vector3.Distance(ClickattPosition.nowPosition, MonsterPosition.monsterPosition[0]) <=1.4 ) {
+        if (Vector3.Distance(ClickattPosition.nowPosition, MonsterPosition.monsterPosition[0]) <=1.4 && Vector3.Distance(ClickattPosition.nowPosition, hero.transform.position) <= 1.4) {
             
             monstername.GetComponent<Text>().text = monster1[1].ToString();
             monsterclass.GetComponent<Text>().text = monster1[2].ToString();
@@ -134,7 +134,7 @@ public class GameManager : MonoBehaviour
             //heroturn = false;
         }
         
-        if (Vector3.Distance(ClickattPosition.nowPosition, MonsterPosition.monsterPosition[1]) <= 1.4 )
+        if (Vector3.Distance(ClickattPosition.nowPosition, MonsterPosition.monsterPosition[1]) <= 1.4 && Vector3.Distance(ClickattPosition.nowPosition, hero.transform.position) <= 1.4)
         {
             
             monstername.GetComponent<Text>().text = monster2[1].ToString();
