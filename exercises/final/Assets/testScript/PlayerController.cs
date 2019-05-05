@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour {
 	public int MoveSpeed;  
     private Animator animator;
     public GameObject attbox, endbtn;
-
+    public static Vector3 attpos;
     private int i = 2;
     void Start()
    {
@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour {
 void Update()
 	{
         if (!attbox) { ClickattPosition.canmove = true; }
-        Debug.Log(attbox);
+        //Debug.Log(attbox);
         if (Input.GetButtonDown("Fire1") && ClickPosition.chose == true )	
 		{
             animator.SetBool("go", true);
@@ -46,7 +46,7 @@ void Update()
         {
 
             Vector3 distance = ClickattPosition.aaa[ClickattPosition.targetChess - i] - this.transform.position;
-
+            attpos = ClickattPosition.aaa[ClickattPosition.targetChess - i];
             float len = distance.magnitude;
 
             distance.Normalize();
@@ -157,10 +157,10 @@ void Update()
 			yield return new WaitForSeconds(1/MoveSpeed);
 			
 			this.transform.position = this.transform.position + (distance * Time.deltaTime * 2);
-            if (this.transform.position.x > 4) { this.transform.position = new Vector3(4, this.transform.position.y, this.transform.position.z); break; }
-            if (this.transform.position.x < -4) { this.transform.position = new Vector3(-4, this.transform.position.y, this.transform.position.z); break; }
-            if (this.transform.position.z > 4) { this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, 4); break; }
-            if (this.transform.position.z < -4) { this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -4); break; }
+          //  if (this.transform.position.x > 4) { this.transform.position = new Vector3(4, this.transform.position.y, this.transform.position.z); break; }
+           // if (this.transform.position.x < -4) { this.transform.position = new Vector3(-4, this.transform.position.y, this.transform.position.z); break; }
+           // if (this.transform.position.z > 4) { this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, 4); break; }
+           // if (this.transform.position.z < -4) { this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -4); break; }
         }
 
         animator.SetBool("go", false);
@@ -178,6 +178,7 @@ void Update()
 		Path.button = true; 
 
 		ClickPosition.ChessBoard = false;
+        
         endbtn.SetActive(true);
 
     }

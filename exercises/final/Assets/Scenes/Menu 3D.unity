@@ -400,6 +400,7 @@ GameObject:
   - component: {fileID: 557638312}
   - component: {fileID: 557638309}
   - component: {fileID: 557638308}
+  - component: {fileID: 557638310}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -446,6 +447,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &557638310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557638307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecda56b9666c3e43ba840adbaf67767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!223 &557638312
 Canvas:
   m_ObjectHideFlags: 0
@@ -1961,7 +1974,7 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 21200000, guid: 7461a7b0cf97947fd9b9e4502fd2d07b, type: 3}
       propertyPath: m_DrawMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 21200000, guid: 7461a7b0cf97947fd9b9e4502fd2d07b, type: 3}
       propertyPath: m_FlipX
@@ -1971,13 +1984,17 @@ PrefabInstance:
       propertyPath: m_FlipY
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 21200000, guid: 7461a7b0cf97947fd9b9e4502fd2d07b, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 7461a7b0cf97947fd9b9e4502fd2d07b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 204.79999
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 7461a7b0cf97947fd9b9e4502fd2d07b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 5
+      value: 157.2
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 7461a7b0cf97947fd9b9e4502fd2d07b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1985,7 +2002,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 7461a7b0cf97947fd9b9e4502fd2d07b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7461a7b0cf97947fd9b9e4502fd2d07b, type: 3}
       propertyPath: m_LocalPosition.x

@@ -5,7 +5,7 @@ public class ApplicationManager : MonoBehaviour {
 
     void Start()
     {
-        Screen.SetResolution(1024, 768, true);
+        Screen.SetResolution(1024, 768, false);
     }
     public void Quit () 
 	{

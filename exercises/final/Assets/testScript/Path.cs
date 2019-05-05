@@ -112,7 +112,7 @@ public class Path : MonoBehaviour {
     void attpath()
     {
 
-        for (i = 0; i < 500; i++)   //500最多可以算到16格
+        for (i = 0; i < 300; i++)   //500最多可以算到16格
         {
 
             //第一輪,從Player位置出發,依序走上下左右
@@ -223,7 +223,7 @@ public class Path : MonoBehaviour {
                     attm = CanAtt;    // 最後一個可以不需要,因為第二輪開始的m,是從剛才陣列裡抓取的
 
                 }
-                else { endbtn.SetActive(true); }
+                else { if (endbtn) { endbtn.SetActive(true); } if (attbtn) { attbtn.SetActive(false); } }
 
                 monsterCheck = true;
                 attCount++;    //每走完一輪就+1,用以達到"更換出發點"的效果
@@ -363,7 +363,7 @@ public class Path : MonoBehaviour {
     void path()
 	{
 
-		for(i = 0; i < 500; i++)	//500最多可以算到16格
+		for(i = 0; i < 300; i++)	//500最多可以算到16格
 		{
 
 			//第一輪,從Player位置出發,依序走上下左右
@@ -660,7 +660,7 @@ public class Path : MonoBehaviour {
         //Position.x(新位置的X座標),Position.z(新位置的Z座標)
         Instantiate(attBox, new Vector3(attPosition.x, 0.01f, attPosition.z), chessBox.transform.rotation);
         
-        if (!attBox) { endbtn.SetActive(true); }
+        //if (!attBox) { endbtn.SetActive(true); }
         attm = attmCount[attCount] - 1;  //行動數-1(mCount[Count]是移動前的m值,因為ppp[Count]是移動前的位置)
         attmCount.Insert(attindex, attm);    //把這次移動過後剩餘的m值,存入陣列
         attppp.Insert(attindex, attPosition);    //把這次移動過後的新位置,存入陣列

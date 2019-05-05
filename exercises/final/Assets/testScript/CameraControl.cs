@@ -18,7 +18,7 @@ public class CameraControl : MonoBehaviour {
 //-------------------------------------------------------------------------------------------
 
 	void Start () {
-        Screen.SetResolution(1024, 768, false);
+        
         offset = transform.position;  //令offset = 攜帶此Script的物件之起始座標
 		
 	}
