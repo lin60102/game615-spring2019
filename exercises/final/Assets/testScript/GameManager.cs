@@ -70,11 +70,15 @@ public class GameManager : MonoBehaviour
         {
             if(rename.renamecheck){
                 //finally win
+                /*
                 winp.GetComponent<CanvasGroup>().alpha = 1;
                 winp.GetComponent<CanvasGroup>().interactable = true;
                 winp.GetComponent<CanvasGroup>().blocksRaycasts = true;
+                */
                 //Debug.Log("asdsaaaa614ads56f48943111365d14saaf8d41a6df");
-            }else{
+                SceneManager.LoadScene("ending");
+            }
+            else{
                 //win stage1
                 winpanel.GetComponent<CanvasGroup>().alpha = 1;
                 winpanel.GetComponent<CanvasGroup>().interactable = true;
