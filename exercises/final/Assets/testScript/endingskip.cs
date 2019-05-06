@@ -11,6 +11,8 @@ public class endingskip : MonoBehaviour
     void Start()
     {
         vPlayer = GetComponent<VideoPlayer>();
+        vPlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, "endvideo.mp4");
+        vPlayer.Play();
         vPlayer.loopPointReached += CheckOver;
     }
 
