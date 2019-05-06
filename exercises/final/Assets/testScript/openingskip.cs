@@ -12,8 +12,8 @@ public class openingskip : MonoBehaviour
     void Start()
     {
         vPlayer = GetComponent<VideoPlayer>();
-        //vPlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, "produce.mp4");
-        vPlayer.url = "https://lin60102.000webhostapp.com/Produce.mp4";
+        vPlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, "produce.mp4");
+        //vPlayer.url = "https://lin60102.000webhostapp.com/Produce.mp4";
         vPlayer.Play();
         vPlayer.loopPointReached += CheckOver;
 
