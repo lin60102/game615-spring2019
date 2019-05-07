@@ -66,8 +66,9 @@ public class Path : MonoBehaviour {
 		{
 			cancel = false; //按一次後就變成false,防止重複點擊造成錯誤
 			camera = false;	//拉近攝影機
-			ClickPosition.delete = true;	//將delete設為true,藉此刪除棋盤
-			chessBoard.SetActive (false);	//隱藏大棋盤
+			ClickPosition.delete = true;    //將delete設為true,藉此刪除棋盤
+            ClickattPosition.delete = true;
+            chessBoard.SetActive (false);	//隱藏大棋盤
 			Reset();	//重置部份參數,回歸點選"移動"前的初值
 
 		}
@@ -78,6 +79,7 @@ public class Path : MonoBehaviour {
 //-----------------------------------------------------------------------------------------------
 
 	
+
 
     public void btnclick_move()
     {
@@ -99,7 +101,7 @@ public class Path : MonoBehaviour {
 
         endbtn.SetActive(false);
        //camera = true;  //將鏡頭拉遠
-        ClickPosition.delete = false;   //delete為false時,棋盤格才能被顯示(克隆)
+        ClickattPosition.delete = false;   //delete為false時,棋盤格才能被顯示(克隆)
         chessBoard.SetActive(true); //顯示大棋盤
         attpath();
         //GameManager.heroturn = false;

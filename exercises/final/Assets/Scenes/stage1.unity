@@ -4809,6 +4809,7 @@ MonoBehaviour:
   winpanel: {fileID: 1507322237}
   nametxt: {fileID: 255676462}
   atttxt: {fileID: 1749211810}
+  chessBoard: {fileID: 390121706}
   winp: {fileID: 507043230}
   losep: {fileID: 1825603969}
 --- !u!4 &2103955720

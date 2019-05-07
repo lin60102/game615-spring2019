@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject mon1, mon2, hero,monstername,monsterclass,monsterhp,attbtntext,movebtn, attbtn,attbox,hero_hp,endbtn,herospeed, winpanel;
     public GameObject nametxt,atttxt;
+    public GameObject chessBoard;
     public GameObject winp, losep;
     
     void Start()
@@ -407,6 +408,19 @@ public class GameManager : MonoBehaviour
     }
     public void btnendturn()
     {
+        ClickPosition.delete = true;
+        ClickattPosition.delete = true;
+        chessBoard.SetActive(false);
+        //-------
+        Path.index = 0;	//存入ppp[]用的索引值歸0(初值)
+        Path.attindex = 0;
+        Path.Count = 0;	//取出ppp[]用的索引值歸0(初值)
+        Path.attCount = 0;
+        Path.ppp.Clear();	//清空儲存行走範圍的陣列
+        Path.attppp.Clear();
+        Path.mCount.Clear();	//清空儲存 m 值的陣列
+        Path.attmCount.Clear();
+        //*-----
         if (movebtn) { movebtn.SetActive(false); }
         if (attbtn) { attbtn.SetActive(false); }
         if (endbtn) { endbtn.SetActive(false); }
