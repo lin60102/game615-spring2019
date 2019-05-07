@@ -410,7 +410,8 @@ public class GameManager : MonoBehaviour
     {
         ClickPosition.delete = true;
         ClickattPosition.delete = true;
-        chessBoard.SetActive(false);
+        if (chessBoard) { chessBoard.SetActive(false); }
+        
         //-------
         Path.index = 0;	//存入ppp[]用的索引值歸0(初值)
         Path.attindex = 0;
