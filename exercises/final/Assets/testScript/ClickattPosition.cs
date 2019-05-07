@@ -35,7 +35,10 @@ public class ClickattPosition : MonoBehaviour {
 	void Update()
 	{
         if (delete == true)  //計算完最短行走路徑後
-        { Destroy(gameObject); }	//刪除本地物件(意即ChessBox)
+        {
+            Destroy(gameObject);
+             
+        }	//刪除本地物件(意即ChessBox)
         
 
     }

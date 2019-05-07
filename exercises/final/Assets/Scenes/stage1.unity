@@ -1804,7 +1804,7 @@ MonoBehaviour:
   chessBox: {fileID: 100000, guid: 0f477c2b75b60cc469bf01693f6a3beb, type: 3}
   attBox: {fileID: 100000, guid: 0d773b2f6c04ffb44bc9abdf316ab97b, type: 3}
   endbtn: {fileID: 1162316657}
-  attbtn: {fileID: 0}
+  attbtn: {fileID: 1246396932}
   chessBoard: {fileID: 390121706}
   m: 3
   attm: 1

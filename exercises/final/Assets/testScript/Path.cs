@@ -59,10 +59,12 @@ public class Path : MonoBehaviour {
 
 	void Update()
 	{
-		if(ClickPosition.delete == true)	//點完格子之後
-			m = CanMove;	//把 m 值回歸最大值
-
-		if(Input.GetMouseButton(1) && cancel == true)	//點選右鍵,取消"移動"
+        if (ClickPosition.delete == true)    //點完格子之後
+        {
+            m = CanMove;	//把 m 值回歸最大值
+            attbtn.SetActive(true); 
+        }
+        if (Input.GetMouseButton(1) && cancel == true)	//點選右鍵,取消"移動"
 		{
 			cancel = false; //按一次後就變成false,防止重複點擊造成錯誤
 			camera = false;	//拉近攝影機
@@ -86,8 +88,9 @@ public class Path : MonoBehaviour {
 
         if (button == true)
         {
-                endbtn.SetActive(false);
-                camera = true;  //將鏡頭拉遠
+            if (endbtn) { endbtn.SetActive(false); }
+            if (attbtn) { attbtn.SetActive(false); }
+            camera = true;  //將鏡頭拉遠
                 button = false; //讓"移動"Button消失,防止重複點擊
                 ClickPosition.delete = false;   //delete為false時,棋盤格才能被顯示(克隆)
                 chessBoard.SetActive(true); //顯示大棋盤

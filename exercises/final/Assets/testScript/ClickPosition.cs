@@ -7,7 +7,7 @@ using System.Collections.Generic;
 public class ClickPosition : MonoBehaviour {
 
 	public Material chessColor;	//用來放棋盤格顏色的材質球
-    public GameObject btnmove;
+    public GameObject btnmove,btnatt;
 	public static int mSave = 0;	//暫存探索位置的 m 值,用於比較大小
 	public static int targetChess = 0;	//存取aaa陣列的引數
 	private int i = 0;	//迴圈計數用
@@ -26,6 +26,7 @@ public class ClickPosition : MonoBehaviour {
 	{
 
         btnmove = GameObject.Find("Move");
+        btnatt = GameObject.Find("Attact");
     }
 
 
@@ -86,12 +87,12 @@ public class ClickPosition : MonoBehaviour {
 			targetChess++;	//探索完一遍後,把儲存用的引數+1
 
 		}
-	
-			
-		
 
 
-		delete = true;	
+
+
+       // if (!btnatt) { btnatt.SetActive(true); }
+        delete = true;	
 		Path.camera = false;	
 		chose = true;	
 		Path.cancel = false;	
